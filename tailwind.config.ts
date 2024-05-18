@@ -25,6 +25,11 @@ const config = {
     },
     extend: {
       colors: {
+        'BlackRussian': '#10002B',
+        'Windsor': '#3C096C',
+        'Heliotrope': '#C77DFF',
+        'Medium-Purple': '#B469EF',
+        'Purple-Heart': '#7B2CBF',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
