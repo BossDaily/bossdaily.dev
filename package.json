@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.0",
+    "bossdaily.dev": "file:",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "discord-card-react": "^2.0.2",
     "framer-motion": "^11.3.2",
     "lucide-react": "^0.408.0",
     "mini-svg-data-uri": "^1.4.4",
