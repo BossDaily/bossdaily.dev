@@ -44,14 +44,30 @@ export const Avatar = ({
     );
   };
 
-  const renderStatus = () => {
-    return (
-      <span
+  {
+    /* <span
         className={cn(
-          "absolute bottom-[4px] right-[4px] block w-4 h-4 rounded-full ring ring-white",
+          "absolute bottom-[4px] right-[4px] block w-4 h-4 rounded-full animate-ping",
           offline ? "bg-red-500" : "bg-green-500"
         )}
-      />
+      /> */
+  }
+  const renderStatus = () => {
+    return (
+      <span className="absolute bottom-[2px] right-[2px] block w-4 h-4">
+        <span
+          className={cn(
+            "animate-ping absolute inline-flex h-full w-full rounded-full  opacity-75",
+            offline ? "bg-red-400" : "bg-green-400"
+          )}
+        ></span>
+        <span
+          className={cn(
+            "relative inline-flex rounded-full h-4 w-4 ",
+            offline ? "bg-red-500" : "bg-green-500"
+          )}
+        ></span>
+      </span>
     );
   };
 
