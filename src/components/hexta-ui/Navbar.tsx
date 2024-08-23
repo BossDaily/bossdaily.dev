@@ -1,3 +1,5 @@
+"use client";
+
 import { Menu, MenuItem, MenuDivider } from "@/components/hexta-ui/Menu";
 
 import { useState } from "react";
@@ -6,7 +8,7 @@ import Link from "next/link";
 
 import { FaHome, FaPhone, FaRocket, FaUser } from "react-icons/fa";
 
-const Navbar = () => {
+export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,7 +17,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex justify-between px-5 py-4 w-full bg-zinc-950 items-center">
+      <nav className="flex justify-between px-5 py-4 top-4 z-50 sticky mx-auto max-w-5xl items-center overflow-hidden rounded-[20px] bg-Windsor/[0.1] border border-white/[0.01] backdrop-blur-[6px] text-white">
         <div>
           <Image src="/hexta-studio.svg" alt="HextaUI" width={35} height={35} />
         </div>
