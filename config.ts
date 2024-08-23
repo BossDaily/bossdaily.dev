@@ -1,5 +1,11 @@
 export const config = {
   discordId: "274973338676494347",
+  hero_words: [
+    "Web Developer",
+    " Frontend Developer",
+    " Backend Developer",
+    " Fullstack Developer",
+  ],
   projects: [
     {
       name: "Observer Bot",
@@ -182,4 +188,4 @@ export const config = {
       ],
     },
   ],
-}
+};
