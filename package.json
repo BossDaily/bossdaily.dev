@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hextastudio/ui": "^1.4.7",
     "@radix-ui/react-avatar": "^1.1.0",
     "bossdaily.dev": "file:",
     "class-variance-authority": "^0.7.0",
