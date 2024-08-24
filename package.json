@@ -11,6 +11,7 @@
   "dependencies": {
     "@hextastudio/ui": "^1.4.7",
     "@radix-ui/react-avatar": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.2",
     "bossdaily.dev": "file:",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
