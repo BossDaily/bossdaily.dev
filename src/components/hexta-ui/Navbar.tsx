@@ -17,7 +17,7 @@ export const Navbar = () => {
 		userId: "274973338676494347",
 		socket: true,
 	});
-  let variant: AvatarProps = "default"
+  let variant = "default"
   if ((status?.active_on_discord_desktop || status?.active_on_discord_web) && status?.discord_status === "online") {
     variant = "withStatus"
   }
@@ -37,6 +37,8 @@ export const Navbar = () => {
           <div className="relative">
             <button
               className="p-[4px] hover:bg-white hover:bg-opacity-10 items-center justify-center transition-all opacity-80 hover:opacity-100 rounded-md hidden  max-[650px]:flex"
+              title="menu"
+              name="menu"
               onClick={toggleMenu}
             >
               <svg
