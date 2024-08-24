@@ -17,7 +17,7 @@ export const Navbar = () => {
 		userId: "274973338676494347",
 		socket: true,
 	});
-  let variant = "default"
+  let variant: AvatarProps = "default"
   if ((status?.active_on_discord_desktop || status?.active_on_discord_web) && status?.discord_status === "online") {
     variant = "withStatus"
   }
@@ -30,6 +30,7 @@ export const Navbar = () => {
     <>
       <nav className="flex justify-between px-5 py-3 top-4 z-50 sticky mx-auto max-w-5xl items-center overflow-hidden rounded-[20px] bg-Windsor/[0.1] border border-white/[0.01] backdrop-blur-[6px] text-white">
         <div>
+          {/* @ts-ignore */}
           <Avatar avatarUrl={`https://cdn.discordapp.com/avatars/${status?.discord_user.id}/${status?.discord_user.avatar}.png?size=1024&format=webp&quality=lossless&width=0&height=256`} size={48} variant={variant} />
         </div>
         <div className="flex items-center">
