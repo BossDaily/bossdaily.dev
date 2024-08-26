@@ -28,7 +28,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="flex flex-row sm:flex-row justify-between px-3 sm:px-5 py-2 sm:py-3 top-4 z-50 sticky mx-auto max-w-full sm:max-w-5xl items-center  rounded-[20px] bg-Windsor/[0.1] border border-white/[0.01] backdrop-blur-[6px] text-white">
+      <nav className="flex flex-row sm:flex-row justify-between px-3 sm:px-5 py-2 sm:py-3 top-4 z-40 sticky mx-auto max-w-full sm:max-w-5xl items-center  rounded-[20px] bg-Windsor/[0.1] border border-white/[0.01] backdrop-blur-[6px] text-white">
         <div>
           {/* @ts-ignore */}
           <Avatar avatarUrl={`https://cdn.discordapp.com/avatars/${status?.discord_user.id}/${status?.discord_user.avatar}.png?size=1024&format=webp&quality=lossless&width=0&height=256`} size={48} variant={variant} />
@@ -57,7 +57,7 @@ export const Navbar = () => {
             </button>
 
             <Menu
-              className="max-[650px]:flex hidden w-fit rounded-[20px] bg-Windsor/[0.1] border border-white/[0.01] backdrop-blur-[6px] text-white"
+              className="max-[650px]:flex hidden w-fit rounded-[20px] z-50 text-white"
               onOpen={toggleMenu}
               onClose={toggleMenu}
               isOpen={menuOpen}

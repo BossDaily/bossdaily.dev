@@ -21,12 +21,12 @@ export const Hero: React.FC = () => {
     socket: true,
   });
   return (
-    <div className="z-20 h-full max-w-full items-center sm:max-w-5xl gap-8 my-8 sm:my-16 flex flex-col sm:flex-row sm:items-center sm:justify-between relative overflow-visible p-4 align-middle mx-auto py-12 sm:py-24">
+    <div className="z-20  h-full max-w-full items-center sm:max-w-5xl gap-8 my-8 sm:my-16 flex flex-col sm:flex-row sm:items-center sm:justify-between relative overflow-visible p-4 align-middle mx-auto py-12 sm:py-24">
       <Spotlight
         className="-top-20 sm:-top-40 left-0 sm:left-60 sm:-top-20"
         fill="#C77DFF"
       />
-      <div className="mx-auto relative z-10 w-full pt-10 sm:pt-20 md:pt-0 gap-1 flex flex-col items-center sm:items-start">
+      <div className="mx-auto relative w-full pt-10 sm:pt-20 md:pt-0 gap-1 flex flex-col items-center sm:items-start">
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-center sm:text-left bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           Hello, I am BossDaily <br />{" "}
           <FlipWords
