@@ -4,6 +4,7 @@ import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { Navbar } from "@/components/hexta-ui/Navbar";
 import { Background } from "@/components/background";
 import { Hero } from "@/components/Hero";
+import Projects from "@/components/Projects";
 
 const words = [
   {
@@ -30,6 +31,8 @@ export default function Home() {
       <div></div>
 
       <Hero />
+      
+      <Projects />
     </>
   );
 }
