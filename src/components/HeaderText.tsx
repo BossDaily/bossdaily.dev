@@ -1,6 +1,4 @@
 import React from "react";
-import HyperText from "./magicui/hyper-text";
-import GradualSpacing from "./magicui/gradual-spacing";
 import WordPullUp from "./magicui/word-pull-up";
 
 interface HeaderTextProps {
