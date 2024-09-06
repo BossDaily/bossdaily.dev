@@ -17,7 +17,7 @@ export const Projects: React.FC = () => {
     <div className="z-20 h-full max-w-full items-center sm:max-w-5xl gap-8 flex flex-col  sm:items-center sm:justify-center relative p-4 align-middle mx-auto py-12 sm:py-24">
       <HeaderText>Featured Projects</HeaderText>
       <div className="flex md:flex-row flex-col justify-center md:justify-between align-middle items-center gap-10">
-        <Card className="h-full w-4/6 overflow-hidden shadow-feature-card-dark bg-BlackRussian group">
+        <Card className="h-full w-10/12 md:w-4/6 overflow-hidden shadow-feature-card-dark bg-BlackRussian group">
           <div className="p-4 overflow-hidden">
             <Image
               src="/project-analog.png"
@@ -45,7 +45,7 @@ export const Projects: React.FC = () => {
           <CardContent className="p-0"></CardContent>
           <CardFooter></CardFooter>
         </Card>
-        <Card className="h-full w-4/6 overflow-hidden shadow-feature-card-dark bg-BlackRussian group">
+        <Card className="h-full w-10/12 md:w-4/6 overflow-hidden shadow-feature-card-dark bg-BlackRussian group ">
           <div className="p-4 overflow-hidden">
             <Image
               src="/project-embed.png"
