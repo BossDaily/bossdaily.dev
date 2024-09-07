@@ -14,6 +14,7 @@ import {
 import Image from "next/image";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Badge } from "./ui/badge";
+import ShinyButton from "./magicui/shiny-button";
 
 export const Projects: React.FC = () => {
   const { loading, status } = useLanyard({
@@ -67,8 +68,10 @@ export const Projects: React.FC = () => {
             );
           }
         })}
-      
       </div>
+      <a title="View Projects" href="https://github.com/bossdaily">
+        <ShinyButton text="View All Projects" className="dark" />
+      </a>
     </div>
   );
 };
