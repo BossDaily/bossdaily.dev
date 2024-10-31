@@ -1,0 +1,7 @@
+.discord-card-outer-body {
+  background: #ff0000; /* Example override */
+}
+
+.discord-card-inner-body {
+  background: #00ff00; /* Example override */
+}

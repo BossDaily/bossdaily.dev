@@ -3,6 +3,7 @@
 import { LanyardDiscordCard } from "discord-card-react";
 import "discord-card-react/styles";
 import React from "react";
+// import CustomDiscordCard from "./CustomCard";
 import { useLanyard } from "react-use-lanyard";
 
 const LanCard: React.FC = () => {
@@ -28,7 +29,7 @@ const LanCard: React.FC = () => {
         // Pronouns are optional
         pronouns: "he/him",
       }}
-      
+      maxActivities={0}
     ></LanyardDiscordCard>
   );
 };

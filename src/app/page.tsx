@@ -5,7 +5,7 @@ import { Navbar } from "@/components/hexta-ui/Navbar";
 import { Background } from "@/components/background";
 import { Hero } from "@/components/Hero";
 import Projects from "@/components/Projects";
-import { AboutMe } from "@/components/AboutMe";
+import { AboutMe } from "@/components/aboutme/AboutMe";
 
 const words = [
   {
