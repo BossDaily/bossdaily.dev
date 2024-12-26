@@ -1,9 +1,9 @@
 "use client";
 
-import { LanyardDiscordCard } from "discord-card-react";
+//import { LanyardDiscordCard } from "discord-card-react";
 import "discord-card-react/styles";
 import React from "react";
-import CustomDiscordCard from "./CustomCard";
+import LanyardDiscordCard from "../discord-card/components/LanyardDiscordCard";
 import { useLanyard } from "react-use-lanyard";
 
 const LanCard: React.FC = () => {
@@ -13,7 +13,7 @@ const LanCard: React.FC = () => {
 	});
 
   return (
-    <CustomDiscordCard
+    <LanyardDiscordCard
       // Your Discord user ID (used for Lanyard)
       userId="274973338676494347"
       // Optional: Domain that points at your self-hosted Lanyard instance
@@ -30,8 +30,9 @@ const LanCard: React.FC = () => {
         pronouns: "he/him",
       }}
       maxActivities={0}
+      className=""
 
-    > test</CustomDiscordCard>
+    ></LanyardDiscordCard>
   );
 };
 
