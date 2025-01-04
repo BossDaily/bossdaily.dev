@@ -21,6 +21,7 @@ import LanCard from "./LanCard";
 import Globe from "./globe";
 import WakaStat from "./wakastat";
 import { WakatimeData } from "./wakatimeInterface";
+import NumberTicker from "../ui/number-ticker";
 
 interface AboutMeProps {
   wakatimeData: WakatimeData | null;
@@ -49,6 +50,9 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
       }
     );
   }, [animate, scope]); */
+  const totalHrs = wakatimeData?.data.total_seconds ? Math.round(wakatimeData.data.total_seconds / 3600): 0
+
+  const totalProjects = wakatimeData?.data.projects ? wakatimeData.data.projects.length : 0
 
   return (
     <div className="z-20 h-full max-w-full items-center sm:max-w-5xl flex flex-col sm:items-center sm:justify-center relative  align-middle mx-auto py-12 sm:py-24">
@@ -56,9 +60,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
       <div className="grid h-full w-full gap-4 p-2 grid-cols-12 grid-rows-2 rounded-lg text-white">
         <div className="col-span-3 row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
             <p className="text-2xl">
-            {wakatimeData?.data.total_seconds 
-              ? Math.round(wakatimeData.data.total_seconds / 3600)
-              : 0} hours
+            <NumberTicker className="text-white tracking-tighter" value={totalHrs} /> hours
             </p>
         </div>
 
@@ -101,7 +103,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
         </div>
 
         <div className="col-span-3 row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
-          <p>Edamame</p>
+          <p><NumberTicker className="text-white tracking-tighter  text-2xl" value={totalProjects} /> Projects</p>
         </div>
       </div>
 
