@@ -19,7 +19,6 @@ import { motion, useAnimate } from "framer-motion";
 import { useEffect } from "react";
 import LanCard from "./LanCard";
 import Globe from "./globe";
-import WakaStat from "./wakastat";
 import { WakatimeData } from "./wakatimeInterface";
 import NumberTicker from "../ui/number-ticker";
 
