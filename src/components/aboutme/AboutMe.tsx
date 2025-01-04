@@ -19,12 +19,21 @@ import { motion, useAnimate } from "framer-motion";
 import { useEffect } from "react";
 import LanCard from "./LanCard";
 import Globe from "./globe";
+import WakaStat from "./wakastat";
+import { WakatimeData } from "./wakatimeInterface";
 
-export const AboutMe: React.FC = () => {
-  const { loading, status } = useLanyard({
+interface AboutMeProps {
+  wakatimeData: WakatimeData | null;
+}
+export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
+
+  
+  /* const { loading, status } = useLanyard({
     userId: config.discordId,
     socket: true,
-  });
+  }); */
+
+
   /*  const [scope, animate] = useAnimate();
 
   useEffect(() => {
@@ -46,10 +55,14 @@ export const AboutMe: React.FC = () => {
       <HeaderText>Featured Projects</HeaderText>
       <div className="grid h-full w-full gap-4 p-2 grid-cols-12 grid-rows-2 rounded-lg text-white">
         <div className="col-span-3 row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
-          <p className="text-8xl">Salmon</p>
+            <p className="text-2xl">
+            {wakatimeData?.data.total_seconds 
+              ? Math.round(wakatimeData.data.total_seconds / 3600)
+              : 0} hours
+            </p>
         </div>
 
-        <div className="col-span-6 row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative h-40">
+        <div className="col-span-6 row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative h-48">
           <p className="absolute top-2 right-4 z-10">Broccoli</p>
           <div className="absolute inset-0">
             <Globe />
@@ -57,7 +70,30 @@ export const AboutMe: React.FC = () => {
         </div>
 
         <div className="col-span-3 row-span-4 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
-          <LanCard />
+            <div className="relative w-full">
+            <Image
+              src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=bossdaily&theme=tokyonight"
+              alt="Picture of the author"
+              width={300}
+              height={200}
+              priority
+              sizes="(min-width: 808px) 50vw, 100vw"
+              className="object-cover"
+            />
+            </div>
+
+            <div className="relative w-full">
+            <Image
+              src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=bossdaily&theme=tokyonight"
+              alt="Picture of the author"
+              width={300}
+              height={200}
+              priority
+              sizes="(min-width: 808px) 50vw, 100vw"
+              className="object-cover"
+            />
+            </div>
+          {/* <LanCard /> */}
         </div>
 
         <div className="col-span-6 row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
