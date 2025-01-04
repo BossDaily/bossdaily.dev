@@ -8,7 +8,7 @@ import Projects from "@/components/Projects";
 import { AboutMe } from "@/components/aboutme/AboutMe";
 import { WakatimeData } from "@/components/aboutme/wakatimeInterface";
 
-export async function getWakaTimeStats(): Promise<WakatimeData | null> {
+async function getWakaTimeStats(): Promise<WakatimeData | null> {
   try {
     const res = await fetch(
       "https://wakatime.com/api/v1/users/bossdaily/stats/all_time",
