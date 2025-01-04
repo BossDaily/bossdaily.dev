@@ -6,7 +6,7 @@ import "discord-card-react/styles.css";
 import customStyles from './CustomDiscordCard.module.css';
 import { cn } from '@/lib/utils';
 
-const CustomDiscordCard = (props) => {
+const CustomDiscordCard = (props: any) => {
   
   return (
     
