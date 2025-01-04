@@ -52,7 +52,7 @@ const words = [
 ];
 
 export default async function Home() {
- const wakatimeData =  await getWakaTimeStats();
+  const wakatimeData = await getWakaTimeStats();
   return (
     <>
       <Background />

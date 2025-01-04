@@ -16,7 +16,7 @@ import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Badge } from "../ui/badge";
 import ShinyButton from "../magicui/shiny-button";
 import { motion, useAnimate } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import LanCard from "./LanCard";
 import Globe from "./globe";
 import { WakatimeData } from "./wakatimeInterface";
@@ -27,10 +27,14 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
+import { Octokit } from "@octokit/rest";
 
 interface AboutMeProps {
   wakatimeData: WakatimeData | null;
 }
+
+const octokit = new Octokit();
+
 export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
   /* const { loading, status } = useLanyard({
     userId: config.discordId,
@@ -52,6 +56,37 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
       }
     );
   }, [animate, scope]); */
+  const [stats, setStats] = useState({
+    publicRepos: 0,
+    followers: 0,
+    totalStars: 0,
+  });
+
+  useEffect(() => {
+    async function fetchGitHubStats() {
+      const userResponse = await octokit.rest.users.getByUsername({
+        username: "bossdaily",
+      });
+
+      const reposResponse = await octokit.rest.repos.listForUser({
+        username: "bossdaily",
+      });
+
+      const totalStars = reposResponse.data.reduce(
+        (acc, repo) => acc + (repo?.stargazers_count ?? 0),
+        0
+      );
+
+      setStats({
+        publicRepos: userResponse.data.public_repos,
+        followers: userResponse.data.followers,
+        totalStars,
+      });
+    }
+
+    fetchGitHubStats();
+  }, []);
+
   const totalHrs = wakatimeData?.data.total_seconds
     ? Math.round(wakatimeData.data.total_seconds / 3600)
     : 0;
@@ -64,13 +99,13 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
     <div className="z-20 h-full max-w-full items-center sm:max-w-5xl flex flex-col sm:items-center sm:justify-center relative  align-middle mx-auto py-12 sm:py-24">
       <HeaderText>About Me</HeaderText>
       <div className="grid h-full w-full gap-4 p-2 grid-cols-12 grid-rows-2 rounded-lg text-white">
-        <div className="col-span-3 row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
-          <p className="text-2xl">
+        <div className="col-span-3 row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative">
+          <p className="absolute top-2 right-4 z-10">Hours Programming</p>
+          <p className="text-7xl">
             <NumberTicker
               className="text-white tracking-tighter"
               value={totalHrs}
             />{" "}
-            hours
           </p>
         </div>
 
@@ -105,9 +140,8 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
         </div>
 
         <div className="col-span-3 row-span-4 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
-        
           <div className="relative w-full flex flex-col items-end justify-center p-2 gap-1">
-          <p className="  right-4 z-10">Github Stats (Placeholder)</p>
+            <p className="  right-4 z-10">Github Stats (Placeholder)</p>
             <Image
               src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=bossdaily&theme=aura"
               alt="Picture of the author"
@@ -137,7 +171,6 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
             />
           </div>
 
-
           {/* <LanCard /> */}
         </div>
 
@@ -145,13 +178,14 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
           <p>Pork</p>
         </div>
 
-        <div className="col-span-3 row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
-          <p>
+        <div className="col-span-3 row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative">
+        <p className="absolute top-2 right-4 z-10">Projects</p>
+          <p className="text-7xl">
             <NumberTicker
-              className="text-white tracking-tighter  text-2xl"
-              value={totalProjects}
-            />{" "}
-            Projects
+              className="text-white tracking-tighter"
+              value={stats.publicRepos}
+            />+{" "}
+            
           </p>
         </div>
       </div>
