@@ -7,6 +7,7 @@ import { Hero } from "@/components/Hero";
 import Projects from "@/components/Projects";
 import { AboutMe } from "@/components/aboutme/AboutMe";
 import { WakatimeData } from "@/components/aboutme/wakatimeInterface";
+import Footer from "@/components/Footer";
 
 async function getWakaTimeStats(): Promise<WakatimeData | null> {
   try {
@@ -66,6 +67,8 @@ export default async function Home() {
       <Projects />
 
       <AboutMe wakatimeData={wakatimeData} />
+
+      <Footer />
     </>
   );
 }
