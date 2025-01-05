@@ -28,6 +28,7 @@ import {
   TooltipTrigger,
 } from "../ui/tooltip";
 import { Octokit } from "@octokit/rest";
+import Marquee from "../ui/marquee";
 
 interface AboutMeProps {
   wakatimeData: WakatimeData | null;
@@ -91,9 +92,12 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
     ? Math.round(wakatimeData.data.total_seconds / 3600)
     : 0;
 
-  const totalProjects = wakatimeData?.data.projects
-    ? wakatimeData.data.projects.length
-    : 0;
+  const allLanguages = config.languages.flatMap(
+    (category) => category.languages
+  );
+  const halfPoint = Math.ceil(allLanguages.length / 2);
+  const firstHalf = allLanguages.slice(0, halfPoint);
+  const secondHalf = allLanguages.slice(halfPoint);
 
   return (
     <div className="z-20 h-full max-w-full items-center sm:max-w-5xl flex flex-col sm:items-center sm:justify-center relative  align-middle mx-auto py-12 sm:py-24">
@@ -175,17 +179,40 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
         </div>
 
         <div className="col-span-6 row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
-          <p>Pork</p>
+          {/* <p className="text-white item-center justify-center">Test</p> */}
+          <div className="flex flex-col items-center justify-center gap-2">
+            <p className="text-white">Tech I use</p>
+            <Marquee pauseOnHover className="[--duration:20s]">
+              {firstHalf.map((lang, i) => (
+                <img
+                  key={i}
+                  src={lang.img}
+                  alt={lang.name}
+                  className="w-10 h-10 mx-2"
+                />
+              ))}
+            </Marquee>
+            <Marquee reverse pauseOnHover className="[--duration:20s]">
+              {secondHalf.map((lang, i) => (
+                <img
+                  key={i}
+                  src={lang.img}
+                  alt={lang.name}
+                  className="w-10 h-10 mx-2"
+                />
+              ))}
+            </Marquee>
+          </div>
         </div>
 
         <div className="col-span-3 row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative">
-        <p className="absolute top-2 right-4 z-10">Projects</p>
+          <p className="absolute top-2 right-4 z-10">Projects</p>
           <p className="text-7xl">
             <NumberTicker
               className="text-white tracking-tighter"
               value={stats.publicRepos}
-            />+{" "}
-            
+            />
+            +{" "}
           </p>
         </div>
       </div>

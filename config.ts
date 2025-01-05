@@ -94,7 +94,7 @@ export const config = {
         },
         {
           name: "TailwindCSS",
-          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
         },
         {
           name: "HTML",
@@ -131,7 +131,7 @@ export const config = {
         },
         {
           name: "Prisma",
-          img: "https://seeklogo.com/images/P/prisma-logo-3805665B69-seeklogo.com.png",
+          img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
         },
         {
           name: "Discord.JS",
@@ -155,7 +155,7 @@ export const config = {
         },
         {
           name: "GraphQL",
-          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-original.svg",
+          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
         },
       ],
     },
@@ -197,7 +197,7 @@ export const config = {
         },
         {
           name: "Notion",
-          img: "https://media.discordapp.net/attachments/965985896967077888/1024337530247729162/notion-logo-no-background.png",
+          img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg",
         },
       ],
     },
