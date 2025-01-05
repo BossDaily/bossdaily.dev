@@ -15,43 +15,28 @@ const Footer: React.FC = () => {
     status?.discord_status === "online";
 
   return (
-    <div className="z-20 h-full w-full max-w-full items-center sm:max-w-5xl flex flex-col relative align-middle mx-auto py-6 sm:py-24">
-      <div className="flex flex-col justify-center items-center w-full">
-      <div className="flex flex-col justify-between items-start w-full px-4 sm:px-[35px] py-6 sm:py-12 rounded-[20px] bg-Windsor/[0.1] border border-white/[0.01] backdrop-blur-[6px] gap-2">
+    <div className="z-20 w-full max-w-full px-4 sm:px-0 py-6 sm:py-24">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col justify-between w-full p-4 sm:p-8 rounded-[20px] bg-Windsor/[0.1] border border-white/[0.01] backdrop-blur-[6px] gap-4">
           {online && (
-            <div className="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 relative overflow-hidden gap-2 p-2.5">
-              <div className="flex relative">
-                <span className="flex w-4 h-4">
-                  <span
-                    className={cn(
-                      "animate-ping absolute inline-flex h-full w-full rounded-full opacity-75",
-                      "bg-green-400"
-                    )}
-                  />
-                  <span
-                    className={cn(
-                      "relative inline-flex rounded-full h-4 w-4",
-                      "bg-green-500"
-                    )}
-                  />
+            <div className="flex items-center gap-2 p-2">
+              <div className="relative">
+                <span className="flex w-3 h-3 sm:w-4 sm:h-4">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-green-400" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 sm:h-4 sm:w-4 bg-green-500" />
                 </span>
               </div>
-              <p className="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">
+              <p className="text-xl sm:text-2xl font-bold text-white">
                 Online
               </p>
             </div>
           )}
-          <div className="flex flex-col justify-start items-start flex-grow relative overflow-hidden gap-2 px-2.5 py-9">
-            <a
-              href="/"
-              className="flex-grow-0 flex-shrink-0 text-xl text-left text-white hover:text-gray-300 hover:underline"
-            >
+          
+          <div className="flex flex-col gap-4 px-2 py-4">
+            <a href="/" className="text-lg sm:text-xl text-white hover:text-gray-300 hover:underline">
               Home
             </a>
-            <a
-              href="/projects"
-              className="flex-grow-0 flex-shrink-0 text-xl text-left text-white hover:text-gray-300 hover:underline"
-            >
+            <a href="/projects" className="text-lg sm:text-xl text-white hover:text-gray-300 hover:underline">
               Projects
             </a>
             <a
