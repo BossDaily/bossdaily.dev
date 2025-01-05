@@ -112,6 +112,10 @@ export const config = {
           name: "Typescript",
           img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
         },
+        {
+          name: "Svelte",
+          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
+        },
       ],
     },
     {
@@ -132,6 +136,26 @@ export const config = {
         {
           name: "Discord.JS",
           img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/discordjs/discordjs-original.svg",
+        },
+        {
+          name: "Python",
+          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+        },
+        {
+          name: "Java",
+          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+        },
+        {
+          name: "C++",
+          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+        },
+        {
+          name: "Docker",
+          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg",
+        },
+        {
+          name: "GraphQL",
+          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-original.svg",
         },
       ],
     },
