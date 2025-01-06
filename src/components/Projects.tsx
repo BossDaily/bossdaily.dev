@@ -82,15 +82,21 @@ export const Projects: React.FC = () => {
                   <CardDescription className="text-zinc-400">
                     {project.description}
                   </CardDescription>
-                  <CardFooter className="p-0 pt-2 gap-2 overflow-x-scroll">
-                    {project.tags.map((tag, index) => {
+                    <CardFooter className="p-0 pt-2 gap-2 overflow-hidden">
+                    <motion.div
+                      drag="x"
+                      dragConstraints={{ left: -100, right: 0 }}
+                      className="flex flex-row gap-2"
+                    >
+                      {project.tags.map((tag, index) => {
                       return (
                         <Badge key={index} className="bg-Purple-Heart">
-                          {tag}
+                        {tag}
                         </Badge>
                       );
-                    })}
-                  </CardFooter>
+                      })}
+                    </motion.div>
+                    </CardFooter>
                 </CardHeader>
 
                 <CardContent className="p-0"></CardContent>
