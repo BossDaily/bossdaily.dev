@@ -117,7 +117,9 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
-                <p className="absolute top-2 right-4 z-10">Based in Texas</p>
+                <p className="absolute top-2 right-4 z-10 hover:text-purple-600 hover:underline">
+                  Based in Texas
+                </p>
               </TooltipTrigger>
               <TooltipContent
                 side="bottom"
@@ -179,66 +181,71 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
         <div className="col-span-1 sm:col-span-6 sm:row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden p-4 relative">
           <LanguagesDialog
             trigger={
-              <p className="absolute top-2 right-4 z-10 cursor-pointer hover:text-Windsor transition-colors">
-                View All Stacks
+              <p className="absolute top-2 right-4 z-10 cursor-pointer hover:text-purple-600 hover:underline transition-colors">
+                Stacks
               </p>
             }
           />
-          <div className="flex flex-col items-center justify-center gap-2 w-full overflow-visible">
-            <div className="relative z-10">
-              <Marquee
-                pauseOnHover
-                className="[--duration:20s] overflow-visible"
-              >
-                {firstHalf.map((lang, i) => (
-                  <TooltipProvider key={i}>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <img
-                          src={lang.img}
-                          alt={lang.name}
-                          className="w-8 h-8 sm:w-10 sm:h-10 mx-2"
-                        />
-                      </TooltipTrigger>
-                      <TooltipContent
-                        side="top"
-                        className="border-none text-white bg-Windsor z-50"
-                      >
-                        <p className="">{lang.name}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                ))}
-              </Marquee>
-            </div>
-            <div className="relative z-10">
-              <Marquee
-                reverse
-                pauseOnHover
-                className="[--duration:20s] overflow-visible"
-              >
-                {secondHalf.map((lang, i) => (
-                  <TooltipProvider key={i}>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <img
-                          src={lang.img}
-                          alt={lang.name}
-                          className="w-8 h-8 sm:w-10 sm:h-10 mx-2"
-                        />
-                      </TooltipTrigger>
-                      <TooltipContent
-                        side="top"
-                        className="border-none text-white bg-Windsor z-50"
-                      >
-                        <p>{lang.name}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                ))}
-              </Marquee>
-            </div>
-          </div>
+
+          <LanguagesDialog
+            trigger={
+              <div className="flex flex-col items-center justify-center gap-2 w-full overflow-visible">
+                <div className="relative z-10">
+                  <Marquee
+                    pauseOnHover
+                    className="[--duration:20s] overflow-visible"
+                  >
+                    {firstHalf.map((lang, i) => (
+                      <TooltipProvider key={i}>
+                        <Tooltip>
+                          <TooltipTrigger>
+                            <img
+                              src={lang.img}
+                              alt={lang.name}
+                              className="w-8 h-8 sm:w-10 sm:h-10 mx-2"
+                            />
+                          </TooltipTrigger>
+                          <TooltipContent
+                            side="top"
+                            className="border-none text-white bg-Windsor z-50"
+                          >
+                            <p className="">{lang.name}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    ))}
+                  </Marquee>
+                </div>
+                <div className="relative z-10">
+                  <Marquee
+                    reverse
+                    pauseOnHover
+                    className="[--duration:20s] overflow-visible"
+                  >
+                    {secondHalf.map((lang, i) => (
+                      <TooltipProvider key={i}>
+                        <Tooltip>
+                          <TooltipTrigger>
+                            <img
+                              src={lang.img}
+                              alt={lang.name}
+                              className="w-8 h-8 sm:w-10 sm:h-10 mx-2"
+                            />
+                          </TooltipTrigger>
+                          <TooltipContent
+                            side="top"
+                            className="border-none text-white bg-Windsor z-50"
+                          >
+                            <p>{lang.name}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    ))}
+                  </Marquee>
+                </div>
+              </div>
+            }
+          />
         </div>
 
         <div className="col-span-1 sm:col-span-3 sm:row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative min-h-[120px]">
