@@ -112,7 +112,6 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
             />{" "}
           </p>
         </div>
-
         <div className="col-span-1 sm:col-span-6 sm:row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative h-48">
           <TooltipProvider>
             <Tooltip>
@@ -138,9 +137,9 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
             </Tooltip>
           </TooltipProvider>
 
-            <div className="absolute inset-0  ">
+          <div className="absolute inset-0  ">
             <Globe className="" />
-            </div>
+          </div>
         </div>
 
         <div className="col-span-1 sm:col-span-3 sm:row-span-4 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
@@ -176,29 +175,62 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
           </div>
         </div>
 
-        <div className="col-span-1 sm:col-span-6 sm:row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden p-4">
-          <div className="flex flex-col items-center justify-center gap-2 w-full">
-            <p className="text-white">Tech I use</p>
-            <Marquee pauseOnHover className="[--duration:20s]">
-              {firstHalf.map((lang, i) => (
-                <img
-                  key={i}
-                  src={lang.img}
-                  alt={lang.name}
-                  className="w-8 h-8 sm:w-10 sm:h-10 mx-2"
-                />
-              ))}
-            </Marquee>
-            <Marquee reverse pauseOnHover className="[--duration:20s]">
-              {secondHalf.map((lang, i) => (
-                <img
-                  key={i}
-                  src={lang.img}
-                  alt={lang.name}
-                  className="w-8 h-8 sm:w-10 sm:h-10 mx-2"
-                />
-              ))}
-            </Marquee>
+        <div className="col-span-1 sm:col-span-6 sm:row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden p-4 relative">
+          <p className="absolute top-2 right-4 z-10">Stacks</p>
+          <div className="flex flex-col items-center justify-center gap-2 w-full overflow-visible">
+            <div className="relative z-10">
+              <Marquee
+                pauseOnHover
+                className="[--duration:20s] overflow-visible"
+              >
+                {firstHalf.map((lang, i) => (
+                  <TooltipProvider key={i}>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <img
+                          src={lang.img}
+                          alt={lang.name}
+                          className="w-8 h-8 sm:w-10 sm:h-10 mx-2"
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent
+                        side="top"
+                        className="border-none text-white bg-Windsor z-50"
+                      >
+                        <p className="">{lang.name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                ))}
+              </Marquee>
+            </div>
+            <div className="relative z-10">
+              <Marquee
+                reverse
+                pauseOnHover
+                className="[--duration:20s] overflow-visible"
+              >
+                {secondHalf.map((lang, i) => (
+                  <TooltipProvider key={i}>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <img
+                          src={lang.img}
+                          alt={lang.name}
+                          className="w-8 h-8 sm:w-10 sm:h-10 mx-2"
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent
+                        side="top"
+                        className="border-none text-white bg-Windsor z-50"
+                      >
+                        <p>{lang.name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                ))}
+              </Marquee>
+            </div>
           </div>
         </div>
 
