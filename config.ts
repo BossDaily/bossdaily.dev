@@ -13,21 +13,14 @@ export const config = {
       featured: false,
       btnName: "Repo",
       thumbnail:
-        "/project-observer-bot.png",
-      description: `Observer Bot is a Discord bot I built for my Minecraft server in
-      Discord.js. This bot mainly queries stats from a Minecraft server
-      with ServerTAP installed and shows them in a Discord embed. I made
-      this because a lot of other solutions to do this sucked so I
-      thought I would make one myself. The bot also shows information
-      about the Discord server it is on, and members in the Discord
-      server. And soon it will be able to show stats about the Minecraft
-      server.`,
+        "/project-observerbot.png",
+      description: `Observer Bot is a Discord bot I built that queries statistics directly from my Minecraft server.`,
       tags: [
         "Discord.js",
         "Typescript",
         "Node.js",
         "Minecraft",
-        "REST-API",
+        "Rest-API",
         "SQLite",
       ],
     },
@@ -56,10 +49,7 @@ export const config = {
       thumbnail:
         "/project-simps.png",
       description: `S.I.M.P.S. stands for Server Integrated Multi Punishment System,
-      aims to be an innovative and new global ban list of problematic
-      players in smaller Minecraft SMP communities. I built them a
-      Discord bot that admins can use to add, edit, and view the database of
-      players from Discord. This bot is functional but the repo is private at the moment.`,
+      aims to be an innovative and new global ban list.`,
       tags: [
         "Discord.js",
         "Typescript",
