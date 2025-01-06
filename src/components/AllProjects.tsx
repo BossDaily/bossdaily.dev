@@ -15,10 +15,15 @@ import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Badge } from "./ui/badge";
 import ShinyButton from "./magicui/shiny-button";
 import { motion } from "framer-motion";
+import { Spotlight } from "./ui/Spotlight";
 
 export const AllProjects: React.FC = () => {
   return (
     <div className="z-20 h-full max-w-full items-center sm:max-w-5xl gap-8 flex flex-col  sm:items-center sm:justify-center relative p-4 align-middle mx-auto py-12 sm:py-24">
+      <Spotlight
+        className="-top-20 sm:-top-40 left-0 sm:left-60 sm:-top-20 -z-20"
+        fill="#C77DFF"
+      />
       <HeaderText>Projects</HeaderText>
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full"
