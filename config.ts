@@ -102,7 +102,7 @@ export const config = {
         },
         {
           name: "CSS",
-          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+          img: "https://raw.githubusercontent.com/xandemon/developer-icons/refs/heads/main/icons/css.svg",
         },
         {
           name: "Javascript",
@@ -115,7 +115,7 @@ export const config = {
         {
           name: "Svelte",
           img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
-        },
+        }
       ],
     },
     {
@@ -157,6 +157,14 @@ export const config = {
           name: "GraphQL",
           img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
         },
+        {
+          name: "Vercel",
+          img: "https://raw.githubusercontent.com/xandemon/developer-icons/refs/heads/main/icons/vercel-light.svg",
+        },
+        {
+          name: "Supabase",
+          img: "https://raw.githubusercontent.com/xandemon/developer-icons/refs/heads/main/icons/supabase.svg",
+        },
       ],
     },
     {
@@ -180,17 +188,16 @@ export const config = {
         },
         {
           name: "Github",
-          img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+          img: "https://raw.githubusercontent.com/xandemon/developer-icons/refs/heads/main/icons/github-light.svg",
         },
         {
           name: "IntelliJ",
           img: "https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA_icon.svg",
         },
-      ],
-    },
-    {
-      type: "Productivity",
-      languages: [
+        {
+          name: "Arc",
+          img: "https://raw.githubusercontent.com/xandemon/developer-icons/refs/heads/main/icons/arc.svg",
+        },
         {
           name: "Trello",
           img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg",
