@@ -138,9 +138,9 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
             </Tooltip>
           </TooltipProvider>
 
-          <div className="absolute inset-0">
-            <Globe />
-          </div>
+            <div className="absolute inset-0  ">
+            <Globe className="" />
+            </div>
         </div>
 
         <div className="col-span-1 sm:col-span-3 sm:row-span-4 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">

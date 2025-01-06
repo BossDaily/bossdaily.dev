@@ -12,7 +12,7 @@ const GLOBE_CONFIG: COBEOptions = {
   onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
-  theta: 0.3,
+  theta: 0,  // Changed to 0 to show front view
   dark: 0,
   diffuse: 0.4,
   mapSamples: 16000,
@@ -92,13 +92,13 @@ export default function Globe({
   return (
     <div
       className={cn(
-        "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]",
+        "absolute left-1/2 -translate-x-1/2 h-[300px] w-full max-w-[600px] overflow-hidden",
         className
       )}
     >
       <canvas
         className={cn(
-          "h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
+          "absolute bottom-[-60%] h-[200%] w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
         ref={canvasRef}
         onPointerDown={(e) =>
