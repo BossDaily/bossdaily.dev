@@ -64,7 +64,7 @@ export const Navbar = () => {
             >
               <MenuItem>
                 <Link
-                  href="#"
+                  href="/"
                   className="flex items-center gap-3 h-full w-full"
                 >
                   <FaHome /> Home
@@ -72,7 +72,7 @@ export const Navbar = () => {
               </MenuItem>
               <MenuItem>
                 <Link
-                  href="#"
+                  href="/#about"
                   className="flex items-center gap-3 h-full w-full"
                 >
                   <FaUser /> About
@@ -89,7 +89,7 @@ export const Navbar = () => {
               <MenuDivider />
               <MenuItem>
                 <Link
-                  href="#"
+                  href="/#contact"
                   className="flex items-center gap-3 h-full w-full"
                 >
                   <FaPhone /> Contact
@@ -100,7 +100,7 @@ export const Navbar = () => {
           <ul className="flex items-center justify-center text-[14px] gap-7 max-[650px]:hidden">
             <li>
               <Link
-                href="#"
+                href="/"
                 className="opacity-80 hover:opacity-100 hover:underline transition-all"
               >
                 Home
@@ -108,7 +108,7 @@ export const Navbar = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="/#about"
                 className="opacity-80 hover:opacity-100 hover:underline transition-all"
               >
                 About
@@ -116,7 +116,7 @@ export const Navbar = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="/projects"
                 className="opacity-80 hover:opacity-100 hover:underline transition-all"
               >
                 Projects
@@ -124,7 +124,7 @@ export const Navbar = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="/#contact"
                 className="opacity-80 hover:opacity-100 hover:underline transition-all"
               >
                 Contact

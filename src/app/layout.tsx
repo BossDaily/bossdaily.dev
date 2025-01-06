@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/hexta-ui/Navbar";
+import Footer from "@/components/Footer";
+import { Background } from "@/components/background";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-BlackRussian`}>{children}</body>
+      <body className={`${inter.className} bg-BlackRussian`}>
+        <Background />
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

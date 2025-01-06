@@ -41,9 +41,7 @@ export default async function Home() {
   const wakatimeData = await getWakaTimeStats();
   return (
     <>
-      <Background />
 
-      <Navbar />
 
       <div></div>
 
@@ -53,7 +51,7 @@ export default async function Home() {
 
       <AboutMe wakatimeData={wakatimeData} />
 
-      <Footer />
+
     </>
   );
 }

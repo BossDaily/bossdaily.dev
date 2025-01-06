@@ -101,7 +101,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
   const secondHalf = allLanguages.slice(halfPoint);
 
   return (
-    <div className="z-20 h-full max-w-full items-center sm:max-w-5xl flex flex-col sm:items-center sm:justify-center relative align-middle mx-auto py-6 sm:py-24">
+    <div className="z-20 h-full max-w-full items-center sm:max-w-5xl flex flex-col sm:items-center sm:justify-center relative align-middle mx-auto py-6 sm:py-24" id="about">
       <HeaderText>About Me</HeaderText>
       <div className="grid h-full w-full gap-4 p-2 grid-cols-1 sm:grid-cols-12 sm:grid-rows-2 rounded-lg text-white">
         <div className="col-span-1 sm:col-span-3 sm:row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative min-h-[120px]">
