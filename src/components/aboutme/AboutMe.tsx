@@ -29,6 +29,7 @@ import {
 } from "../ui/tooltip";
 import { Octokit } from "@octokit/rest";
 import Marquee from "../ui/marquee";
+import LanguagesDialog from "./LanguagesDialog";
 
 interface AboutMeProps {
   wakatimeData: WakatimeData | null;
@@ -176,7 +177,13 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
         </div>
 
         <div className="col-span-1 sm:col-span-6 sm:row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden p-4 relative">
-          <p className="absolute top-2 right-4 z-10">Stacks</p>
+          <LanguagesDialog
+            trigger={
+              <p className="absolute top-2 right-4 z-10 cursor-pointer hover:text-Windsor transition-colors">
+                View All Stacks
+              </p>
+            }
+          />
           <div className="flex flex-col items-center justify-center gap-2 w-full overflow-visible">
             <div className="relative z-10">
               <Marquee
