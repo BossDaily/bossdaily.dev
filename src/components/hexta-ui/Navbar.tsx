@@ -80,7 +80,7 @@ export const Navbar = () => {
               </MenuItem>
               <MenuItem>
                 <Link
-                  href="#"
+                  href="/projects"
                   className="flex items-center gap-3 h-full w-full"
                 >
                   <FaRocket /> Projects

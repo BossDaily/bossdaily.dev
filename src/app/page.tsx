@@ -37,21 +37,6 @@ async function getWakaTimeStats(): Promise<WakatimeData | null> {
   }
 }
 
-const words = [
-  {
-    text: "Web Developer,",
-  },
-  {
-    text: " Frontend Developer,",
-  },
-  {
-    text: " Backend Developer,",
-  },
-  {
-    text: " Fullstack Developer,",
-  },
-];
-
 export default async function Home() {
   const wakatimeData = await getWakaTimeStats();
   return (
