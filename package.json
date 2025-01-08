@@ -26,6 +26,7 @@
     "mini-svg-data-uri": "^1.4.4",
     "motion": "^11.15.0",
     "next": "14.2.16",
+    "puppeteer": "^23.11.1",
     "react": "^18",
     "react-dom": "^18",
     "react-spring": "^9.7.4",
