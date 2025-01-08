@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/hexta-ui/Navbar";
 import Footer from "@/components/Footer";
 import { Background } from "@/components/background";
+import { config } from "../../config"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,19 +22,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://github.com/bossdaily.png",
+        url: `/api/pfp?username=${config.github}`,
         sizes: "32x32",
         type: "image/png"
       },
       {
-        url: "https://github.com/bossdaily.png",
+        url: `/api/pfp?username=${config.github}`,
         sizes: "16x16",
         type: "image/png"
       }
     ],
     apple: [
       {
-        url: "https://github.com/bossdaily.png",
+        url: `/api/pfp?username=${config.github}`,
         sizes: "180x180",
         type: "image/png"
       }
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     other: [
       {
         rel: "mask-icon",
-        url: "https://github.com/bossdaily.png"
+        url: `/api/pfp?username=${config.github}`
       }
     ]
   }

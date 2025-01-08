@@ -1,5 +1,6 @@
 export const config = {
   discordId: "274973338676494347",
+  github: "bossdaily",
   hero_words: [
     "Web Developer",
     " Frontend Developer",
