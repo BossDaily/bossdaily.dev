@@ -85,7 +85,7 @@ export const Hero: React.FC = () => {
           <Tooltip>
             <TooltipTrigger>
               <Avatar
-                avatarUrl="https://cdn.discordapp.com/avatars/274973338676494347/00dcf84af54a0a58d2394b4054e0f7f5.png?size=1024&format=webp&quality=lossless&width=0&height=256"
+                avatarUrl={`https://cdn.discordapp.com/avatars/${status?.discord_user.id}/${status?.discord_user.avatar}.png?size=1024&format=webp&quality=lossless&width=0&height=256`}
                 size={120}
                 className={cn(
                   "hover:ring-4",
