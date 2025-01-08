@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
-import puppeteer from "puppeteer-core";
-import chromium from "@sparticuz/chromium-min";
+import puppeteer from "puppeteer";
 
 export async function GET() {
   const html = `
@@ -34,27 +33,30 @@ export async function GET() {
       </body>
     </html>
   `;
-
   const browser = await puppeteer.launch({
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath(),
-    headless: chromium.headless,
+    headless: true,
   });
-  
   const page = await browser.newPage();
 
+  // Set viewport to match OG image dimensions
   await page.setViewport({
     width: 1200,
     height: 630,
   });
 
-  await page.setContent(html, { waitUntil: "networkidle0" });
+  // Set content and wait for network idle
+  await page.setContent(html, {
+    waitUntil: "networkidle0",
+  });
 
-  const screenshot = await page.screenshot({ type: "png" });
+  // Take screenshot
+  const screenshot = await page.screenshot({
+    type: "png",
+  });
 
   await browser.close();
 
+  // Return the screenshot as response
   return new Response(screenshot, {
     headers: {
       "Content-Type": "image/png",
