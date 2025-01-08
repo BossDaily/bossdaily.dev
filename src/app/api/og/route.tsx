@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-//export const runtime = 'edge';
+export const runtime = 'edge';
 
 export async function GET() {
   return new ImageResponse(
@@ -13,11 +13,11 @@ export async function GET() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: 'rgb(16 0 43)',
+          backgroundColor: '#10002b',
           backgroundImage: `
-            radial-gradient(at center, transparent, rgb(16 0 43) 80%),
-            linear-gradient(rgb(255 255 255 / 0.1) 1px, transparent 1px),
-            linear-gradient(to right, rgb(255 255 255 / 0.1) 1px, transparent 1px)
+            radial-gradient(circle at 50% 50%, transparent, #10002b),
+            linear-gradient(180deg, #ffffff1a 0%, transparent 1px),
+            linear-gradient(90deg, #ffffff1a 0%, transparent 1px)
           `,
           backgroundSize: '100% 100%, 80px 80px, 80px 80px',
         }}
@@ -33,16 +33,14 @@ export async function GET() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)',
+            boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)',
           }}
         >
           <img
             src="https://github.com/bossdaily.png"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
+            width={192}
+            height={192}
+            alt="profile"
           />
         </div>
         <div
