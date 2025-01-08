@@ -34,7 +34,7 @@ export async function GET() {
     </html>
   `;
   const browser = await puppeteer.launch({
-    headless: "new",
+    headless: true,
   });
   const page = await browser.newPage();
 
