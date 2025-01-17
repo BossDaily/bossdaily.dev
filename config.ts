@@ -9,12 +9,29 @@ export const config = {
   ],
   projects: [
     {
+      name: "bossdaily.dev",
+      url: "https://github.com/bossdaily/bossdaily.dev",
+      featured: false,
+      btnName: "Repo",
+      thumbnail: "/project-bossdailydev.png",
+      description: `This is my personal portfolio website for showcasing all of my projects.`,
+      tags: [
+        "React",
+        "Next.JS",
+        "TailwindCSS",
+        "Vercel",
+        "3D",
+        "Typescript",
+        "Framer Motion",
+        "Rest-API",
+      ],
+    },
+    {
       name: "Observer Bot",
       url: "https://github.com/ComparatorCraftSMP/observer-bot-ts",
       featured: false,
       btnName: "Repo",
-      thumbnail:
-        "/project-observerbot.png",
+      thumbnail: "/project-observerbot.png",
       description: `Observer Bot is a Discord bot I built that queries statistics directly from my Minecraft server.`,
       tags: [
         "Discord.js",
@@ -26,12 +43,28 @@ export const config = {
       ],
     },
     {
+      name: "Waves.FM",
+      url: "https://github.com/bossdaily/waves-fm",
+      featured: true,
+      btnName: "Repo",
+      thumbnail: "/project-wavesfm.png",
+      description: `Waves FM is a web that creates real-time animated wave visualizations from the users current Last.fm music scrobble.`,
+      tags: [
+        "React",
+        "Typescript",
+        "TailwindCSS",
+        "Next.JS",
+        "Last.fm API",
+        "Image Processing",
+        "Vercel",
+      ],
+    },
+    {
       name: "Analog",
       url: "https://github.com/analog-org",
       featured: true,
       btnName: "Repo",
-      thumbnail:
-        "/project-analog.png",
+      thumbnail: "/project-analog.png",
       description: `Analog will be a fullstack, self hosted Discord bot with a web dashboard built in Svelte-Kit.`,
       tags: [
         "Discord.js",
@@ -47,8 +80,7 @@ export const config = {
       url: "https://github.com/simpsmc",
       featured: false,
       btnName: "Repo",
-      thumbnail:
-        "/project-simps.png",
+      thumbnail: "/project-simps.png",
       description: `S.I.M.P.S. stands for Server Integrated Multi Punishment System,
       aims to be an innovative and new global ban list.`,
       tags: [
@@ -56,6 +88,7 @@ export const config = {
         "Typescript",
         "REST-APIs",
         "Prisma",
+        "CRUD",
         "MySQL",
         "Minecraft",
       ],
@@ -63,10 +96,9 @@ export const config = {
     {
       name: "Discord Link Embed",
       url: "https://discord-link-kappa.vercel.app/",
-      featured: true,
+      featured: false,
       btnName: "Website",
-      thumbnail:
-        "/project-embed.png",
+      thumbnail: "/project-embed.png",
       description: `This website allows you to dynamically create an embed on Discord only using a URL.`,
       tags: ["Next.JS", "Typescript", "TailwindCSS"],
     },
@@ -106,7 +138,7 @@ export const config = {
         {
           name: "Svelte",
           img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
-        }
+        },
       ],
     },
     {
