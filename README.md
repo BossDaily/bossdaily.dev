@@ -1,7 +1,7 @@
 
 
 <div align="center" >
-  <img src="https://github.com/bossdaily.png" alt="BossDaily" width="100" style="border-radius: 50%;" />
+  <img src="https://www.bossdaily.dev/api/pfp?username=bossdaily" alt="BossDaily" width="150" style="border-radius: 50%;" />
   <h1>bossdaily.dev</h1>
   <p>My personal portfolio website built with Next.js, TypeScript, and TailwindCSS</p>
 </div>
