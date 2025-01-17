@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-  <img src="./public/project-bossdailydev.png" alt="Banner" />
+  <img src="./public/project-bossdailydev.png" alt="Banner" style="border-radius: 30px;" />
 </div>
 
 ## 🚀 Features
