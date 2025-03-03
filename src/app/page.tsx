@@ -41,8 +41,6 @@ export default async function Home() {
   const wakatimeData = await getWakaTimeStats();
   return (
     <>
-
-
       <div></div>
 
       <Hero />
@@ -50,8 +48,6 @@ export default async function Home() {
       <Projects />
 
       <AboutMe wakatimeData={wakatimeData} />
-
-
     </>
   );
 }
