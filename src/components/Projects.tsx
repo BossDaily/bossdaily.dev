@@ -39,7 +39,7 @@ export const Projects: React.FC = () => {
             return (
               <Card
                 key={index}
-                className="h-max w-7/12 md:w-4/6 overflow-hidden shadow-feature-card-dark bg-BlackRussian group"
+                className="h-max w-full md:w-[480px] overflow-hidden shadow-feature-card-dark bg-BlackRussian group"
               >
                 <div className="p-4 overflow-hidden">
                   <Image
