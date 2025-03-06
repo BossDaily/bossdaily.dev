@@ -1,21 +1,7 @@
 "use client";
 
 import { config } from "../../../config";
-import { useLanyard } from "react-use-lanyard";
 import { HeaderText } from "../HeaderText";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
-import Image from "next/image";
-import { SiGithub } from "@icons-pack/react-simple-icons";
-import { Badge } from "../ui/badge";
-import ShinyButton from "../magicui/shiny-button";
-import { motion, useAnimate } from "framer-motion";
 import { useEffect, useState } from "react";
 import Globe from "./globe";
 import { WakatimeData } from "./wakatimeInterface";
