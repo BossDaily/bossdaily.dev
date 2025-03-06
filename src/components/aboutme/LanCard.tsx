@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -159,7 +160,12 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
     activities,
     listening_to_spotify,
     spotify,
-  } = data || { discord_user: {}, discord_status: "offline", activities: [], listening_to_spotify: false };
+  } = data || {
+    discord_user: {},
+    discord_status: "offline",
+    activities: [],
+    listening_to_spotify: false,
+  };
 
   //console.log(activities)
 
@@ -240,8 +246,8 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
         } else {
           const discriminatorNum =
             discord_user.discriminator === "0"
-            // @ts-ignore
-              ? Number(BigInt(discord_user.id) >> BigInt(22)) % 6
+              ? // @ts-ignore
+                Number(BigInt(discord_user.id) >> BigInt(22)) % 6
               : Number(discord_user.discriminator) % 5;
           newImages.avatar = `https://cdn.discordapp.com/embed/avatars/${discriminatorNum}.png`;
         }
@@ -249,39 +255,39 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
         // Load clan badge
         // @ts-ignore
         if (discord_user.clan && !hideClan) {
+          // @ts-ignore
           newImages.clanBadge = `https://cdn.discordapp.com/clan-badges/${discord_user.clan.identity_guild_id}/${discord_user.clan.badge}.png?size=16`;
         }
 
         // Load avatar decoration
         // @ts-ignore
         if (discord_user.avatar_decoration_data && !hideDecoration) {
+          // @ts-ignore
           newImages.avatarDecoration = `https://cdn.discordapp.com/avatar-decoration-presets/${discord_user.avatar_decoration_data.asset}.png?size=64&passthrough=${animatedDecoration}`;
         }
 
         // Load activity assets for all display activities
         for (let i = 0; i < displayActivities.length; i++) {
           const activity = displayActivities[i];
-          
+
           if (activity?.assets?.large_image) {
-            newImages[`largeImage_${i}`] = activity.assets.large_image.startsWith(
-              "mp:external/"
-            )
-              ? `https://media.discordapp.net/external/${activity.assets.large_image.replace(
-                  "mp:external/",
-                  ""
-                )}`
-              : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`;
+            newImages[`largeImage_${i}`] =
+              activity.assets.large_image.startsWith("mp:external/")
+                ? `https://media.discordapp.net/external/${activity.assets.large_image.replace(
+                    "mp:external/",
+                    ""
+                  )}`
+                : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`;
           }
 
           if (activity?.assets?.small_image) {
-            newImages[`smallImage_${i}`] = activity.assets.small_image.startsWith(
-              "mp:external/"
-            )
-              ? `https://media.discordapp.net/external/${activity.assets.small_image.replace(
-                  "mp:external/",
-                  ""
-                )}`
-              : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}.webp`;
+            newImages[`smallImage_${i}`] =
+              activity.assets.small_image.startsWith("mp:external/")
+                ? `https://media.discordapp.net/external/${activity.assets.small_image.replace(
+                    "mp:external/",
+                    ""
+                  )}`
+                : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}.webp`;
           }
         }
 
@@ -305,6 +311,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
     };
 
     loadImages();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     data,
     hideDecoration,
@@ -353,14 +360,22 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
           background: rgba(255, 255, 255, 0.3);
         }
       `}</style>
-      
-      <div className={`w-full h-full flex flex-col p-1.5 rounded-lg ${theme === "dark" ? "text-white" : "text-black"} text-base`}>
+
+      <div
+        className={`w-full h-full flex flex-col p-1.5 rounded-lg ${
+          theme === "dark" ? "text-white" : "text-black"
+        } text-base`}
+      >
         {!hideProfile && (
-          <div className={`w-full flex flex-row pb-1.5 ${
-            hideActivity !== "false" && !activity && !listening_to_spotify
-              ? ""
-              : `border-b ${theme === "dark" ? "border-white/10" : "border-black/10"}`
-          }`}>
+          <div
+            className={`w-full flex flex-row pb-1.5 ${
+              hideActivity !== "false" && !activity && !listening_to_spotify
+                ? ""
+                : `border-b ${
+                    theme === "dark" ? "border-white/10" : "border-black/10"
+                  }`
+            }`}
+          >
             <div className="flex relative h-20 w-20 flex-shrink-0">
               <img
                 src={images.avatar}
@@ -371,23 +386,24 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                 }}
               />
 
-              {!hideDecoration && (discord_user as any).avatar_decoration_data && (
-                <>
-                  <img
-                    src={images.avatarDecoration}
-                    alt="Avatar Decoration"
-                    className="hover-opacity block w-16 h-16 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  />
+              {!hideDecoration &&
+                (discord_user as any).avatar_decoration_data && (
+                  <>
+                    <img
+                      src={images.avatarDecoration}
+                      alt="Avatar Decoration"
+                      className="hover-opacity block w-16 h-16 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    />
 
-                  <span
-                    className="absolute bottom-3.5 right-3.5 h-3.5 w-3.5 rounded-full"
-                    style={{
-                      backgroundColor: avatarBorderColor,
-                      border: `3px solid #${backgroundColor}`,
-                    }}
-                  />
-                </>
-              )}
+                    <span
+                      className="absolute bottom-3.5 right-3.5 h-3.5 w-3.5 rounded-full"
+                      style={{
+                        backgroundColor: avatarBorderColor,
+                        border: `3px solid #${backgroundColor}`,
+                      }}
+                    />
+                  </>
+                )}
             </div>
 
             <div className="h-20 w-[260px] flex flex-col justify-center p-2.5">
@@ -400,14 +416,22 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                   {!hideDiscrim &&
                     !showDisplayName &&
                     discord_user.discriminator !== "0" && (
-                      <span className={theme === "dark" ? "text-[#ccc] font-light" : "text-[#666] font-light"}>
+                      <span
+                        className={
+                          theme === "dark"
+                            ? "text-[#ccc] font-light"
+                            : "text-[#666] font-light"
+                        }
+                      >
                         #{discord_user.discriminator}
                       </span>
                     )}
                 </h1>
-
+                {/* @ts-ignore */}
                 {!hideClan &&
+                  // @ts-ignore
                   discord_user.clan &&
+                  // @ts-ignore
                   (discord_user.clan.tag || discord_user.clan.badge) && (
                     <span
                       className="rounded-md px-2 -ml-1.5 mr-3 flex items-center gap-1 text-base font-medium h-full"
@@ -417,7 +441,10 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                         <img src={images.clanBadge} alt="Clan Badge" />
                       )}
                       <p className="mb-[1.1rem] whitespace-nowrap">
-                        {discord_user.clan.tag}
+                        {
+                          // @ts-ignore
+                          discord_user.clan.tag
+                        }
                       </p>
                     </span>
                   )}
@@ -441,9 +468,11 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
               )}
 
               {userStatus && !hideStatus && (
-                <p className={`text-[0.9rem] m-0 font-normal overflow-hidden whitespace-nowrap text-ellipsis ${
-                  theme === "dark" ? "text-[#aaa]" : "text-[#333]"
-                }`}>
+                <p
+                  className={`text-[0.9rem] m-0 font-normal overflow-hidden whitespace-nowrap text-ellipsis ${
+                    theme === "dark" ? "text-[#aaa]" : "text-[#333]"
+                  }`}
+                >
                   {userStatus.emoji?.id && images.statusEmoji && (
                     <img
                       src={images.statusEmoji}
@@ -476,8 +505,10 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
               <div
                 key={`activity-${index}`}
                 className={`flex flex-row min-h-[80px] ml-1.5 text-xs pt-2 ${
-                  index < displayActivities.length - 1 
-                    ? `pb-2 border-b ${theme === "dark" ? "border-white/5" : "border-black/5"}`
+                  index < displayActivities.length - 1
+                    ? `pb-2 border-b ${
+                        theme === "dark" ? "border-white/5" : "border-black/5"
+                      }`
                     : "pb-0"
                 } overflow-hidden`}
               >
@@ -508,31 +539,51 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                   )}
                 </div>
 
-                <div className={`text-[#999] ${
-                  activity.timestamps?.start && !hideTimestamp ? "-mt-1.5" : "mt-1.5"
-                } leading-tight w-[calc(100%-85px)] overflow-hidden`}>
-                  <p className={`${theme === "dark" ? "text-white" : "text-black"} text-[0.85rem] font-bold overflow-hidden whitespace-nowrap text-ellipsis my-1.5`}>
+                <div
+                  className={`text-[#999] ${
+                    activity.timestamps?.start && !hideTimestamp
+                      ? "-mt-1.5"
+                      : "mt-1.5"
+                  } leading-tight w-[calc(100%-85px)] overflow-hidden`}
+                >
+                  <p
+                    className={`${
+                      theme === "dark" ? "text-white" : "text-black"
+                    } text-[0.85rem] font-bold overflow-hidden whitespace-nowrap text-ellipsis my-1.5`}
+                  >
                     {activity.name}
                   </p>
 
                   {activity.details && (
-                    <p className={`${theme === "dark" ? "text-[#ccc]" : "text-[#777]"} overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}>
+                    <p
+                      className={`${
+                        theme === "dark" ? "text-[#ccc]" : "text-[#777]"
+                      } overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}
+                    >
                       {activity.details}
                     </p>
                   )}
 
                   {activity.state && (
-                    <p className={`${theme === "dark" ? "text-[#ccc]" : "text-[#777]"} overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}>
+                    <p
+                      className={`${
+                        theme === "dark" ? "text-[#ccc]" : "text-[#777]"
+                      } overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}
+                    >
                       {activity.state}
                       {activity.party?.size
-                      // @ts-ignore
-                        ? ` (${activity.party.size[0]} of ${activity.party.size[1]})`
+                        ? // @ts-ignore
+                          ` (${activity.party.size[0]} of ${activity.party.size[1]})`
                         : null}
                     </p>
                   )}
 
                   {activity.timestamps?.start && !hideTimestamp && (
-                    <p className={`${theme === "dark" ? "text-[#ccc]" : "text-[#777]"} overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}>
+                    <p
+                      className={`${
+                        theme === "dark" ? "text-[#ccc]" : "text-[#777]"
+                      } overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}
+                    >
                       {elapsedTime(activity.timestamps.start)} elapsed
                     </p>
                   )}
@@ -565,13 +616,25 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
               </div>
 
               <div className="text-[#999] -mt-0.5 leading-none w-[279px]">
-                <p className={`text-xs font-bold ${theme === "dark" ? "text-[#1CB853]" : "text-[#0d943d]"} mb-4`}>
+                <p
+                  className={`text-xs font-bold ${
+                    theme === "dark" ? "text-[#1CB853]" : "text-[#0d943d]"
+                  } mb-4`}
+                >
                   LISTENING TO SPOTIFY...
                 </p>
-                <p className={`h-[15px] ${theme === "dark" ? "text-white" : "text-black"} font-bold text-[0.85rem] overflow-hidden whitespace-nowrap text-ellipsis my-1.5`}>
+                <p
+                  className={`h-[15px] ${
+                    theme === "dark" ? "text-white" : "text-black"
+                  } font-bold text-[0.85rem] overflow-hidden whitespace-nowrap text-ellipsis my-1.5`}
+                >
                   {spotify?.song || "Unknown Song"}
                 </p>
-                <p className={`my-1.5 h-[15px] overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis ${theme === "dark" ? "text-[#ccc]" : "text-[#777]"}`}>
+                <p
+                  className={`my-1.5 h-[15px] overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis ${
+                    theme === "dark" ? "text-[#ccc]" : "text-[#777]"
+                  }`}
+                >
                   By {spotify?.artist || "Unknown Artist"}
                 </p>
               </div>
@@ -583,7 +646,11 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
           (!listening_to_spotify || hideSpotify) &&
           hideActivity === "false" && (
             <div className="flex flex-row h-[150px] justify-center items-center">
-              <p className={`italic text-sm ${theme === "dark" ? "text-[#aaa]" : "text-[#444]"} text-center`}>
+              <p
+                className={`italic text-sm ${
+                  theme === "dark" ? "text-[#aaa]" : "text-[#444]"
+                } text-center`}
+              >
                 {idleMessage}
               </p>
             </div>
