@@ -1,13 +1,10 @@
-import Image from "next/image";
-import { Spotlight } from "@/components/ui/Spotlight";
-import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-import { Navbar } from "@/components/hexta-ui/Navbar";
-import { Background } from "@/components/background";
+
 import { Hero } from "@/components/Hero";
 import Projects from "@/components/Projects";
 import { AboutMe } from "@/components/aboutme/AboutMe";
 import { WakatimeData } from "@/components/aboutme/wakatimeInterface";
-import Footer from "@/components/Footer";
+
+
 
 async function getWakaTimeStats(): Promise<WakatimeData | null> {
   try {

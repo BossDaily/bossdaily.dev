@@ -30,6 +30,7 @@ import {
 import { Octokit } from "@octokit/rest";
 import Marquee from "../ui/marquee";
 import LanguagesDialog from "./LanguagesDialog";
+import LanyardCardExample from "./LancardTest";
 
 interface AboutMeProps {
   wakatimeData: WakatimeData | null;
@@ -101,7 +102,10 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
   const secondHalf = allLanguages.slice(halfPoint);
 
   return (
-    <div className="z-20 h-full max-w-full items-center sm:max-w-5xl flex flex-col sm:items-center sm:justify-center relative align-middle mx-auto py-6 sm:py-24" id="about">
+    <div
+      className="z-20 h-full max-w-full items-center sm:max-w-5xl flex flex-col sm:items-center sm:justify-center relative align-middle mx-auto py-6 sm:py-24"
+      id="about"
+    >
       <HeaderText>About Me</HeaderText>
       <div className="grid h-full w-full gap-4 p-2 grid-cols-1 sm:grid-cols-12 sm:grid-rows-2 rounded-lg text-white">
         <div className="col-span-1 sm:col-span-3 sm:row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative min-h-[120px]">
@@ -145,36 +149,12 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
           </div>
         </div>
 
-        <div className="col-span-1 sm:col-span-3 sm:row-span-4 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden">
-          <div className="relative w-full flex flex-col items-center sm:items-end justify-center p-2 gap-1">
-            <p className="right-4 z-10">Github Stats (Placeholder)</p>
-            <Image
-              src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=bossdaily&theme=aura"
-              alt="Picture of the author"
-              width={300}
-              height={200}
-              priority
-              sizes="(max-width: 640px) 100vw, (min-width: 808px) 50vw, 100vw"
-              className="object-cover w-full sm:w-auto"
-            />
-            <Image
-              src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=bossdaily&theme=aura"
-              alt="Picture of the author"
-              width={300}
-              height={200}
-              priority
-              sizes="(max-width: 640px) 100vw, (min-width: 808px) 50vw, 100vw"
-              className="object-cover w-full sm:w-auto"
-            />
-            <Image
-              src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=bossdaily&theme=aura"
-              alt="Picture of the author"
-              width={300}
-              height={200}
-              priority
-              sizes="(max-width: 640px) 100vw, (min-width: 808px) 50vw, 100vw"
-              className="object-cover w-full sm:w-auto"
-            />
+        <div className="col-span-1 sm:col-span-3 sm:row-span-4 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden p-2">
+          <div className="relative w-full h-full flex flex-col items-center justify-start gap-1">
+            <p className=" hover:text-purple-600 hover:underline">
+              Discord
+            </p>
+            <LanyardCardExample />
           </div>
         </div>
 
