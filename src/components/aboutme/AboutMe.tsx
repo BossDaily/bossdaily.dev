@@ -29,7 +29,7 @@ import {
 import { Octokit } from "@octokit/rest";
 import Marquee from "../ui/marquee";
 import LanguagesDialog from "./LanguagesDialog";
-import LanyardCardExample from "./LancardTest";
+import DiscordCard from "./DiscordCard";
 
 interface AboutMeProps {
   wakatimeData: WakatimeData | null;
@@ -153,7 +153,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
             <p className=" hover:text-purple-600 hover:underline">
               Discord
             </p>
-            <LanyardCardExample />
+            <DiscordCard />
           </div>
         </div>
 
