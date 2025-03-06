@@ -17,7 +17,6 @@ import { Badge } from "../ui/badge";
 import ShinyButton from "../magicui/shiny-button";
 import { motion, useAnimate } from "framer-motion";
 import { useEffect, useState } from "react";
-import LanCard from "./LanCard";
 import Globe from "./globe";
 import { WakatimeData } from "./wakatimeInterface";
 import NumberTicker from "../ui/number-ticker";
