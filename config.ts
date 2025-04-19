@@ -139,6 +139,18 @@ export const config = {
           name: "Svelte",
           img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
         },
+        {
+          name: "Astro",
+          img: "https://raw.githubusercontent.com/xandemon/developer-icons/refs/heads/main/icons/astro.svg",
+        },
+        {
+          name: "C#",
+          img: "https://raw.githubusercontent.com/xandemon/developer-icons/refs/heads/main/icons/c-sharp.svg"
+        },
+        {
+          name: "ShadCN/UI",
+          img: "https://raw.githubusercontent.com/xandemon/developer-icons/refs/heads/main/icons/shadcnui.svg",
+        }
       ],
     },
     {
@@ -188,6 +200,10 @@ export const config = {
           name: "Supabase",
           img: "https://raw.githubusercontent.com/xandemon/developer-icons/refs/heads/main/icons/supabase.svg",
         },
+        {
+          name: "Appwrite",
+          img: "https://raw.githubusercontent.com/xandemon/developer-icons/refs/heads/main/icons/appwrite.svg",
+        }
       ],
     },
     {
