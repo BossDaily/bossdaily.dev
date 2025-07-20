@@ -65,6 +65,7 @@ export const Navbar = () => {
               <MenuItem>
                 <Link
                   href="/"
+
                   className="flex items-center gap-3 h-full w-full"
                 >
                   <FaHome /> Home
@@ -115,12 +116,12 @@ export const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
+              <a
                 href="/projects"
                 className="opacity-80 hover:opacity-100 hover:underline transition-all"
               >
                 Projects
-              </Link>
+              </a>
             </li>
             <li>
               <Link

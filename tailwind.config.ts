@@ -6,6 +6,7 @@ import colors from "tailwindcss/colors";
 import defaultTheme from "tailwindcss/defaultTheme";
 import svgToDataUri from "mini-svg-data-uri";
 
+
 const config = {
   darkMode: ["class"],
   content: [
