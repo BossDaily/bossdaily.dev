@@ -376,7 +376,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                   }`
             }`}
           >
-            <div className="flex relative h-20 w-20 flex-shrink-0">
+            <div className="flex relative h-20 w-20 shrink-0">
               <img
                 src={images.avatar}
                 alt="User Avatar"
@@ -512,7 +512,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                     : "pb-0"
                 } overflow-hidden`}
               >
-                <div className="mr-4 w-16 h-16 relative flex-shrink-0">
+                <div className="mr-4 w-16 h-16 relative shrink-0">
                   {images[`largeImage_${index}`] ? (
                     <img
                       src={images[`largeImage_${index}`]}
@@ -523,7 +523,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                     <img
                       src="https://lanyard-profile-readme.vercel.app/assets/unknown.png"
                       alt="Unknown Icon"
-                      className="w-14 h-14 mt-1 filter invert-[100%] object-contain"
+                      className="w-14 h-14 mt-1 filter invert-100 object-contain"
                     />
                   )}
 
@@ -599,7 +599,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
           !hideSpotify &&
           activities.some((a) => a.type === 2) && (
             <div className="flex flex-row h-[120px] ml-4 text-sm pt-4.5">
-              <div className="mr-4 w-16 h-16 relative flex-shrink-0">
+              <div className="mr-4 w-16 h-16 relative shrink-0">
                 {images.spotifyAlbum ? (
                   <img
                     src={images.spotifyAlbum}
@@ -610,7 +610,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                   <img
                     src="https://lanyard-profile-readme.vercel.app/assets/unknown.png"
                     alt="Unknown Album"
-                    className="w-14 h-14 mt-1 filter invert-[100%] object-contain"
+                    className="w-14 h-14 mt-1 filter invert-100 object-contain"
                   />
                 )}
               </div>

@@ -40,13 +40,13 @@ const BaseDiscordCard = ({
               className="top-[65px] left-[20px] relative rounded-full p-1 w-[85px] h-[85px] border-black-2 z-30"
             />
             <div
-              className="top-[-20px] left-[20px] relative rounded-full p-1 w-[85px] h-[85px] border-black-2 z-[10]"
+              className="top-[-20px] left-[20px] relative rounded-full p-1 w-[85px] h-[85px] border-black-2 z-10"
               style={{
                 background: `linear-gradient(to bottom, ${primaryColor} 60%, transparent 40%)`,
               }}
             ></div>
             <div
-              className="top-[-105px] left-[20px] relative rounded-full p-1 w-[85px] h-[85px] border-black-2 z-[10]"
+              className="top-[-105px] left-[20px] relative rounded-full p-1 w-[85px] h-[85px] border-black-2 z-10"
               style={{
                 background: `linear-gradient(to bottom, #00000099 60%, transparent 40%)`,
               }}

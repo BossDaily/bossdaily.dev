@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
   return (
     <div className="z-20 w-full max-w-full px-4 sm:px-0 py-6 sm:py-24">
       <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col justify-between w-full p-4 sm:p-8 rounded-[20px] bg-Windsor/[0.1] border border-white/[0.01] backdrop-blur-[6px] gap-4">
+        <div className="flex flex-col justify-between w-full p-4 sm:p-8 rounded-[20px] bg-Windsor/[0.1] border border-white/1 backdrop-blur-[6px] gap-4">
           {online && (
             <div className="flex items-center gap-2 p-2">
               <div className="relative">
@@ -41,19 +41,19 @@ const Footer: React.FC = () => {
             </a>
             <a
               href="https://github.com/bossdaily"
-              className="flex-grow-0 flex-shrink-0 text-xl text-left text-white hover:text-gray-300 hover:underline"
+              className="grow-0 shrink-0 text-xl text-left text-white hover:text-gray-300 hover:underline"
             >
               Github
             </a>
             <a
               href="https://wakatime.com/bossdaily"
-              className="flex-grow-0 flex-shrink-0 text-xl text-left text-white hover:text-gray-300 hover:underline"
+              className="grow-0 shrink-0 text-xl text-left text-white hover:text-gray-300 hover:underline"
             >
               WakaTime
             </a>
           </div>
-          <div className="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 relative overflow-hidden gap-2.5 p-2.5">
-            <p className="flex-grow-0 flex-shrink-0 text-base text-left text-white">
+          <div className="flex flex-col justify-start items-start grow-0 shrink-0 relative overflow-hidden gap-2.5 p-2.5">
+            <p className="grow-0 shrink-0 text-base text-left text-white">
               ©{new Date().getFullYear()} BossDaily
             </p>
           </div>

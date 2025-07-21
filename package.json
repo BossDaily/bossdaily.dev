@@ -16,7 +16,7 @@
     "@radix-ui/react-dialog": "^1.1.10",
     "@radix-ui/react-tabs": "^1.1.7",
     "@radix-ui/react-tooltip": "^1.2.3",
-    "@tailwindcss/postcss": "^4.1.4",
+    "@tailwindcss/postcss": "^4.1.11",
     "bossdaily.dev": "file:",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -41,7 +41,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
     "postcss": "^8",
-    "tailwindcss": "^4.1.4",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5"
   }
 }

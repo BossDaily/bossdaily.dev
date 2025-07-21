@@ -8,6 +8,10 @@ import { config } from "../../config"
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport = {
+  themeColor: "#10002B",
+};
+
 export const metadata: Metadata = {
   title: "BossDaily's Portfolio",
   description: "A portfolio website for BossDaily to showcase his projects and skills.",
@@ -18,7 +22,6 @@ export const metadata: Metadata = {
       }
     ],
   },
-  themeColor: "#10002B",
   icons: {
     icon: [
       {
@@ -55,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-BlackRussian`}>
+      <body className={`${inter.className} bg-black-russian`}>
         <Background />
         <Navbar />
         {children}
