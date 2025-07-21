@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { CSSProperties } from "react";
 import { LanyardData } from "react-use-lanyard";
 
@@ -171,14 +171,16 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
 
   // Prepare the activities to display - filter out ignored app IDs
   const parsedIgnoreAppId = parseAppId(ignoreAppId);
-  const filteredActivities = activities
-    .filter((activity) => activity.type === 0)
-    .filter(
-      (activity) => !parsedIgnoreAppId.includes(activity.application_id || "")
-    );
-  // Get up to 2 activities to display
-  const displayActivities = filteredActivities.slice(0, 2);
-  const activity = filteredActivities[0];
+  const displayActivities = useMemo(() => {
+    return activities
+      .filter((activity) => activity.type === 0)
+      .filter(
+        (activity) => !parsedIgnoreAppId.includes(activity.application_id || "")
+      )
+      .slice(0, 2);
+  }, [activities, parsedIgnoreAppId]);
+  
+  const activity = displayActivities[0];
   // Avatar and status logic
   let avatarBorderColor = "#747F8D";
   let avatarExtension = "webp";
@@ -313,14 +315,20 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
     loadImages();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
-    data,
+    discord_user.id,
+    discord_user.avatar,
+    discord_user.avatar_decoration_data,
+    discord_user.clan,
     hideDecoration,
     hideClan,
     hideSpotify,
     avatarExtension,
     statusExtension,
     animatedDecoration,
-    displayActivities,
+    listening_to_spotify,
+    spotify?.album_art_url,
+    JSON.stringify(displayActivities), // Stringify to avoid deep comparison issues
+    JSON.stringify(activities.find((a) => a.type === 4)), // User status
   ]);
 
   if (loading) {
