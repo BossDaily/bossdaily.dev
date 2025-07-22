@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, MenuItem, MenuDivider } from "@/components/hexta-ui/Menu";
+import { ModeToggle } from "@/components/mode-toggle";
 
 import { useState } from "react";
 import Image from "next/legacy/image";
@@ -28,12 +29,13 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="flex flex-row sm:flex-row justify-between px-3 sm:px-5 py-2 sm:py-3 top-4 z-40 sticky mx-auto max-w-full sm:max-w-5xl items-center  rounded-[20px] bg-Windsor/[0.1] border border-white/1 backdrop-blur-[6px] text-white">
+      <nav className="flex flex-row sm:flex-row justify-between px-3 sm:px-5 py-2 sm:py-3 top-4 z-40 sticky mx-auto max-w-full sm:max-w-5xl items-center rounded-[20px] bg-card/80 backdrop-blur-[6px] text-foreground shadow-lg">
         <div>
           {/* @ts-ignore */}
           <Avatar avatarUrl={`https://cdn.discordapp.com/avatars/${status?.discord_user.id}/${status?.discord_user.avatar}.png?size=1024&format=webp&quality=lossless&width=0&height=256`} size={48} variant={variant} />
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
+          <ModeToggle />
           <div className="relative">
             <button
               className="p-[4px] hover:bg-white hover:bg-opacity-10 items-center justify-center transition-all opacity-80 hover:opacity-100 rounded-md hidden  max-[650px]:flex"
@@ -102,7 +104,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/"
-                className="opacity-80 hover:opacity-100 hover:underline transition-all"
+                className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
               >
                 Home
               </Link>
@@ -110,7 +112,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/#about"
-                className="opacity-80 hover:opacity-100 hover:underline transition-all"
+                className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
               >
                 About
               </Link>
@@ -118,7 +120,7 @@ export const Navbar = () => {
             <li>
               <a
                 href="/projects"
-                className="opacity-80 hover:opacity-100 hover:underline transition-all"
+                className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
               >
                 Projects
               </a>
@@ -126,7 +128,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/#contact"
-                className="opacity-80 hover:opacity-100 hover:underline transition-all"
+                className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
               >
                 Contact
               </Link>

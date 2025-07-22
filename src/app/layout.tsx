@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/hexta-ui/Navbar";
 import Footer from "@/components/Footer";
 import { Background } from "@/components/background";
+import { ThemeProvider } from "@/components/theme-provider";
 import { config } from "../../config"
 
 const inter = Inter({ subsets: ["latin"] });
@@ -57,12 +58,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-black-russian`}>
-        <Background />
-        <Navbar />
-        {children}
-        <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className}`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Background />
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

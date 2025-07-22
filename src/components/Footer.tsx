@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
   return (
     <div className="z-20 w-full max-w-full px-4 sm:px-0 py-6 sm:py-24">
       <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col justify-between w-full p-4 sm:p-8 rounded-[20px] bg-Windsor/[0.1] border border-white/1 backdrop-blur-[6px] gap-4">
+        <div className="flex flex-col justify-between w-full p-4 sm:p-8 rounded-[20px] bg-card/80 backdrop-blur-[6px] gap-4 shadow-lg">
           {online && (
             <div className="flex items-center gap-2 p-2">
               <div className="relative">
@@ -26,17 +26,17 @@ const Footer: React.FC = () => {
                   <span className="relative inline-flex rounded-full h-3 w-3 sm:h-4 sm:w-4 bg-green-500" />
                 </span>
               </div>
-              <p className="text-xl sm:text-2xl font-bold text-white">
+              <p className="text-xl sm:text-2xl font-bold text-foreground">
                 Online
               </p>
             </div>
           )}
           
           <div className="flex flex-col gap-4 px-2 py-4">
-            <a href="/" className="text-lg sm:text-xl text-white hover:text-gray-300 hover:underline">
+            <a href="/" className="text-lg sm:text-xl text-foreground hover:text-primary hover:underline transition-colors">
               Home
             </a>
-            <a href="/projects" className="text-lg sm:text-xl text-white hover:text-gray-300 hover:underline">
+            <a href="/projects" className="text-lg sm:text-xl text-foreground hover:text-primary hover:underline transition-colors">
               Projects
             </a>
             <a
