@@ -164,20 +164,61 @@
 
   --shadow-feature-card: 0 -2px 8px 0 rgb(0 0 0 / 0.15), 0 -1px 3px 0 rgb(0 0 0 / 0.1);
   --shadow-feature-card-dark: 0 0 0 1px rgb(255 255 255 / 0.06), 0 -1px rgb(255 255 255 / 0.1);
+
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+  --animate-aurora: aurora 60s linear infinite;
 }
 
 body {
   letter-spacing: var(--tracking-normal);
 }
 
-@layer utilities {
-  /* .shadow-feature-card {
-    box-shadow: 0 -1px 3px 0 rgb(0 0 0 / 0.05);
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
   }
-  .shadow-feature-card-dark {
-    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.06), 0 -1px rgb(255 255 255 / 0.1);
-  } */
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
 }
+
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@layer utilities {}
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
