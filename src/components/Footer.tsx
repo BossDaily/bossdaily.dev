@@ -41,19 +41,19 @@ const Footer: React.FC = () => {
             </a>
             <a
               href="https://github.com/bossdaily"
-              className="grow-0 shrink-0 text-xl text-left text-white hover:text-gray-300 hover:underline"
+              className="grow-0 shrink-0 text-xl text-left text-foreground hover:text-gray-300 hover:underline"
             >
               Github
             </a>
             <a
               href="https://wakatime.com/bossdaily"
-              className="grow-0 shrink-0 text-xl text-left text-white hover:text-gray-300 hover:underline"
+              className="grow-0 shrink-0 text-xl text-left text-foreground hover:text-gray-300 hover:underline"
             >
               WakaTime
             </a>
           </div>
           <div className="flex flex-col justify-start items-start grow-0 shrink-0 relative overflow-hidden gap-2.5 p-2.5">
-            <p className="grow-0 shrink-0 text-base text-left text-white">
+            <p className="grow-0 shrink-0 text-base text-left text-foreground">
               ©{new Date().getFullYear()} BossDaily
             </p>
           </div>
