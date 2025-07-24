@@ -59,7 +59,7 @@ export const AllProjects: React.FC = () => {
                   className="flex flex-row gap-2 hover:underline "
                   href={project.url}
                 >
-                  <CardTitle className="text-foreground dark:text-foreground">{project.name}</CardTitle> <SiGithub />{" "}
+                  <CardTitle className="text-foreground dark:text-foreground">{project.name}</CardTitle> <SiGithub/>{" "}
                 </a>
                 <CardDescription className="text-gray-600 dark:text-gray-400">
                   {project.description}

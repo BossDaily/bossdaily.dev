@@ -39,7 +39,7 @@ export const Projects: React.FC = () => {
             return (
               <Card
                 key={index}
-                className="h-max w-[320px] sm:w-[400px] md:w-[480px] overflow-hidden shadow-feature-card-dark bg-BlackRussian group"
+                className="h-max w-[320px] sm:w-[400px] md:w-[480px] overflow-hidden bg-background shadow-feature-card dark:shadow-feature-card-dark group"
               >
                 <div className="p-2 sm:p-4 overflow-hidden">
                   <Image
@@ -55,7 +55,7 @@ export const Projects: React.FC = () => {
                     className="flex flex-row gap-2 hover:underline"
                     href={project.url}
                   >
-                    <CardTitle>{project.name}</CardTitle> <SiGithub />{" "}
+                    <CardTitle className="text-foreground hover:underline">{project.name}</CardTitle> <SiGithub className="text-foreground" />{" "}
                   </a>
                   <CardDescription className="text-zinc-400">
                     {project.description}
@@ -68,7 +68,7 @@ export const Projects: React.FC = () => {
                     >
                       {project.tags.map((tag, index) => {
                         return (
-                          <Badge key={index} className="bg-Purple-Heart">
+                          <Badge key={index} className="bg-purple-heart  text-white w-full">
                             {tag}
                           </Badge>
                         );
