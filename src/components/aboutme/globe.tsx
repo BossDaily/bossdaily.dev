@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import createGlobe, { COBEOptions } from "cobe";
+import { useMotionValue, useSpring } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -10,7 +11,7 @@ const GLOBE_CONFIG: COBEOptions = {
   height: 800,
   onRender: () => {},
   devicePixelRatio: 2,
-  phi: 2.75,  // Fixed position
+  phi: 0.5, // Changed from 2.75 to show United States
   theta: 0.4,
   dark: 0,
   diffuse: 0.4,
@@ -31,90 +32,118 @@ export default function Globe({
   config?: COBEOptions;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  let phi = 0;
-  let width = 0;
-  const pointerInteracting = useRef(null);
+  const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
-  const [r, setR] = useState(0);
   const fadeMask = 'radial-gradient(circle at 50% 50%, rgb(0, 0, 0) 60%, rgb(0, 0, 0, 0) 70%)';
+  
+  // Auto-rotation
+  let phi = 0;
 
-  const updatePointerInteraction = (value: any) => {
-    pointerInteracting.current = value;
-    if (canvasRef.current) {
-      canvasRef.current.style.cursor = value ? "grabbing" : "grab";
-    }
-  };
-
-  const updateMovement = (clientX: any) => {
-    if (pointerInteracting.current !== null) {
-      const delta = clientX - pointerInteracting.current;
-      pointerInteractionMovement.current = delta;
-      setR(delta / 200);
-    }
-  };
-
-  const onRender = useCallback(
-    (state: Record<string, any>) => {
-      if (!pointerInteracting.current) phi += 0.005;
-      state.phi = phi + r;
-      state.width = width * 2;
-      state.height = width * 2;
-    },
-    [r]
-  );
+  // Framer Motion values for smooth animation
+  const r = useMotionValue(0);
+  const smoothR = useSpring(r, { 
+    stiffness: 300, 
+    damping: 40, 
+    mass: 1 
+  });
 
   useEffect(() => {
+    let width = 0;
+
     const onResize = () => {
-      if (canvasRef.current) {
-        width = canvasRef.current.offsetWidth;
+      if (canvasRef.current && (width = canvasRef.current.offsetWidth)) {
+        window.addEventListener('resize', onResize);
       }
     };
-    window.addEventListener("resize", onResize);
     onResize();
 
-    const globe = createGlobe(canvasRef.current!, {
+    if (!canvasRef.current) return;
+
+    const globe = createGlobe(canvasRef.current, {
       ...config,
       width: width * 2,
       height: width * 2,
-      onRender,
+      onRender: (state) => {
+        // Auto-rotate only when not being dragged
+        if (!pointerInteracting.current) phi += 0.005;
+        
+        state.phi = 0.5 + phi + smoothR.get(); // Combined auto-rotation + drag
+        state.theta = config.theta;
+        state.width = width * 2;
+        state.height = width * 2;
+      }
     });
 
-    setTimeout(() => (canvasRef.current!.style.opacity = "1"));
+    setTimeout(() => {
+      if (canvasRef.current) {
+        canvasRef.current.style.opacity = "1";
+      }
+    }, 100);
+
     return () => {
       globe.destroy();
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener('resize', onResize);
     };
-  }, []);
+  }, [smoothR, config]);
 
   return (
     <div className={cn("absolute inset-x-0 bottom-[-190px] mx-auto aspect-square h-[388px]", className)}>
-      <div className="w-full h-full flex items-center justify-center overflow-visible">
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          placeItems: 'center',
+          placeContent: 'center',
+          overflow: 'visible'
+        }}
+      >
         <div
-          className="w-full aspect-square max-w-[800px]"
           style={{
+            width: '100%',
+            aspectRatio: '1/1',
+            maxWidth: 800,
             WebkitMaskImage: fadeMask,
             maskImage: fadeMask
           }}
         >
           <canvas
             ref={canvasRef}
-            className="w-full h-full opacity-0 transition-opacity duration-500"
-            style={{
-              contain: 'layout paint size',
-              cursor: 'auto',
-              userSelect: 'none'
+            onPointerDown={(e) => {
+              pointerInteracting.current = e.clientX - pointerInteractionMovement.current;
+              if (canvasRef.current) canvasRef.current.style.cursor = 'grabbing';
             }}
-            onPointerDown={(e) =>
-              updatePointerInteraction(
-                e.clientX - pointerInteractionMovement.current,
-              )
-            }
-            onPointerUp={() => updatePointerInteraction(null)}
-            onPointerOut={() => updatePointerInteraction(null)}
-            onMouseMove={(e) => updateMovement(e.clientX)}
-            onTouchMove={(e) =>
-              e.touches[0] && updateMovement(e.touches[0].clientX)
-            }
+            onPointerUp={() => {
+              pointerInteracting.current = null;
+              if (canvasRef.current) canvasRef.current.style.cursor = 'grab';
+            }}
+            onPointerOut={() => {
+              pointerInteracting.current = null;
+              if (canvasRef.current) canvasRef.current.style.cursor = 'grab';
+            }}
+            onMouseMove={(e) => {
+              if (pointerInteracting.current !== null) {
+                const delta = e.clientX - pointerInteracting.current;
+                pointerInteractionMovement.current = delta;
+                r.set(delta / 200);
+              }
+            }}
+            onTouchMove={(e) => {
+              if (pointerInteracting.current !== null && e.touches[0]) {
+                const delta = e.touches[0].clientX - pointerInteracting.current;
+                pointerInteractionMovement.current = delta;
+                r.set(delta / 200);
+              }
+            }}
+            style={{
+              width: '100%',
+              height: '100%',
+              contain: 'layout paint size',
+              cursor: 'grab',
+              userSelect: 'none',
+              opacity: 0,
+              transition: 'opacity 500ms'
+            }}
           />
         </div>
       </div>
