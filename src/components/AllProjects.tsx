@@ -72,7 +72,7 @@ export const AllProjects: React.FC = () => {
                   >
                     {project.tags.map((tag, index) => {
                       return (
-                        <Badge key={index} className="bg-purple-heart w-full">
+                        <Badge key={index} className="bg-purple-heart  text-white w-full">
                           {tag}
                         </Badge>
                       );
