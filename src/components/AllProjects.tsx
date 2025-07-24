@@ -43,7 +43,7 @@ export const AllProjects: React.FC = () => {
           return (
             <Card
               key={index}
-              className="h-max w-full overflow-hidden shadow-feature-card-dark bg-[#10002B] group"
+              className="h-max w-full overflow-hidden shadow-feature-card dark:shadow-feature-card-dark bg-background dark:bg-background group"
             >
               <div className="p-4 overflow-hidden">
                 <Image
@@ -54,14 +54,14 @@ export const AllProjects: React.FC = () => {
                   className="rounded-xl"
                 />
               </div>
-              <CardHeader className="py-0 text-white">
+              <CardHeader className="py-0">
                 <a
-                  className="flex flex-row gap-2 hover:underline"
+                  className="flex flex-row gap-2 hover:underline "
                   href={project.url}
                 >
-                  <CardTitle>{project.name}</CardTitle> <SiGithub />{" "}
+                  <CardTitle className="text-background dark:text-foreground">{project.name}</CardTitle> <SiGithub />{" "}
                 </a>
-                <CardDescription className="text-zinc-400">
+                <CardDescription className="text-gray-600 dark:text-gray-400">
                   {project.description}
                 </CardDescription>
                 <CardFooter className="p-0 pt-2 gap-2 overflow-hidden">
@@ -72,7 +72,7 @@ export const AllProjects: React.FC = () => {
                   >
                     {project.tags.map((tag, index) => {
                       return (
-                        <Badge key={index} className="bg-Purple-Heart w-full">
+                        <Badge key={index} className="bg-purple-heart w-full">
                           {tag}
                         </Badge>
                       );
