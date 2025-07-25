@@ -2,6 +2,7 @@
 import { Hero } from "@/components/Hero";
 import Projects from "@/components/Projects";
 import { AboutMe } from "@/components/aboutme/AboutMe";
+import Contact from "@/components/Contact";
 import { WakatimeData } from "@/components/aboutme/wakatimeInterface";
 
 
@@ -45,6 +46,8 @@ export default async function Home() {
       <Projects />
 
       <AboutMe wakatimeData={wakatimeData} />
+
+      <Contact />
     </>
   );
 }
