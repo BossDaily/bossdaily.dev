@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@hextastudio/ui": "^1.4.7",
     "@icons-pack/react-simple-icons": "^13.6.0",
     "@octokit/rest": "^22.0.0",
     "@radix-ui/react-avatar": "^1.1.10",
