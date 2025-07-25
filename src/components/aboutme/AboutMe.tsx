@@ -94,27 +94,27 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
     >
       <HeaderText>About Me</HeaderText>
       <div className="grid h-full w-full gap-4 p-2 grid-cols-1 sm:grid-cols-12 sm:grid-rows-2 rounded-lg text-white">
-        <div className="col-span-1 sm:col-span-3 sm:row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative min-h-[120px]">
-          <p className="absolute top-2 right-4 z-10">Hours Programming</p>
+        <div className="col-span-1 sm:col-span-3 sm:row-span-1 shadow-feature-card dark:shadow-feature-card-dark  bg-background group rounded-lg flex items-center justify-center overflow-hidden relative min-h-[120px]">
+          <p className="absolute top-2 right-4 z-10 text-foreground">Hours Programming</p>
           <p className="text-5xl sm:text-7xl">
             <NumberTicker
-              className="text-white tracking-tighter"
+              className="text-foreground tracking-tighter"
               value={totalHrs}
             />{" "}
           </p>
         </div>
-        <div className="col-span-1 sm:col-span-6 sm:row-span-1 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative h-48">
+        <div className="col-span-1 sm:col-span-6 sm:row-span-1 shadow-feature-card dark:shadow-feature-card-dark  bg-background group rounded-lg flex items-center justify-center overflow-hidden relative h-48">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
-                <p className="absolute top-2 right-4 z-10 hover:text-purple-600 hover:underline">
+                <p className="absolute top-2 right-4 z-10 hover:text-purple-600 text-foreground hover:underline">
                   Based in Texas
                 </p>
               </TooltipTrigger>
               <TooltipContent
                 side="bottom"
                 sideOffset={16}
-                className="border-none text-white bg-Windsor"
+                className="border-0 shadow-feature-card dark:shadow-feature-card-dark ring-0 text-foreground backdrop-blur-[6px] bg-card/80"
               >
                 <p>
                   Time for me:{" "}
@@ -135,19 +135,19 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
           </div>
         </div>
 
-        <div className="col-span-1 sm:col-span-3 sm:row-span-4 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden p-2">
+        <div className="col-span-1 sm:col-span-3 sm:row-span-4 shadow-feature-card dark:shadow-feature-card-dark  bg-background group rounded-lg flex items-center justify-center overflow-hidden p-2">
           <div className="relative w-full h-full flex flex-col items-center justify-start gap-1">
-            <p className=" hover:text-purple-600 hover:underline">
+            <p className=" hover:text-purple-600 text-foreground hover:underline">
               Discord
             </p>
             <DiscordCard />
           </div>
         </div>
 
-        <div className="col-span-1 sm:col-span-6 sm:row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden p-4 relative">
+        <div className="col-span-1 sm:col-span-6 sm:row-span-2 shadow-feature-card dark:shadow-feature-card-dark  bg-background group rounded-lg flex items-center justify-center overflow-hidden p-4 relative">
           <LanguagesDialog
             trigger={
-              <p className="absolute top-2 right-4 z-10 cursor-pointer hover:text-purple-600 hover:underline transition-colors">
+              <p className="absolute top-2 right-4 z-10 cursor-pointer hover:text-purple-600 text-foreground hover:underline transition-colors">
                 Stacks
               </p>
             }
@@ -173,7 +173,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
                           </TooltipTrigger>
                           <TooltipContent
                             side="top"
-                            className="border-none text-white bg-Windsor z-50"
+                            className="border-0 shadow-feature-card dark:shadow-feature-card-dark ring-0 text-foreground backdrop-blur-[6px] bg-card/80 z-50"
                           >
                             <p className="">{lang.name}</p>
                           </TooltipContent>
@@ -200,7 +200,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
                           </TooltipTrigger>
                           <TooltipContent
                             side="top"
-                            className="border-none text-white bg-Windsor z-50"
+                            className="border-0 shadow-feature-card dark:shadow-feature-card-dark ring-0 text-foreground backdrop-blur-[6px] bg-card/80 z-50"
                           >
                             <p>{lang.name}</p>
                           </TooltipContent>
@@ -214,11 +214,11 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
           />
         </div>
 
-        <div className="col-span-1 sm:col-span-3 sm:row-span-2 shadow-feature-card-dark bg-BlackRussian group rounded-lg flex items-center justify-center overflow-hidden relative min-h-[120px]">
-          <p className="absolute top-2 right-4 z-10">Projects</p>
-          <p className="text-5xl sm:text-7xl">
+        <div className="col-span-1 sm:col-span-3 sm:row-span-2 shadow-feature-card dark:shadow-feature-card-dark  bg-background group rounded-lg flex items-center justify-center overflow-hidden relative min-h-[120px]">
+          <p className="absolute top-2 right-4 z-10 text-foreground">Projects</p>
+          <p className="text-5xl sm:text-7xl text-foreground">
             <NumberTicker
-              className="text-white tracking-tighter"
+              className="tracking-tighter"
               value={stats.publicRepos}
             />
             +{" "}

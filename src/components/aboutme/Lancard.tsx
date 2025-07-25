@@ -416,7 +416,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
 
             <div className="h-20 w-[260px] flex flex-col justify-center p-2.5">
               <div className="flex flex-row h-6">
-                <h1 className="text-lg mr-3 whitespace-nowrap overflow-hidden text-ellipsis">
+                <h1 className="text-lg mr-3 whitespace-nowrap overflow-hidden text-ellipsis text-foreground">
                   {showDisplayName && discord_user.global_name
                     ? discord_user.global_name
                     : discord_user.username}
@@ -425,11 +425,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                     !showDisplayName &&
                     discord_user.discriminator !== "0" && (
                       <span
-                        className={
-                          theme === "dark"
-                            ? "text-[#ccc] font-light"
-                            : "text-[#666] font-light"
-                        }
+                        className="text-foreground"
                       >
                         #{discord_user.discriminator}
                       </span>
@@ -470,16 +466,14 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
               </div>
 
               {showDisplayName && (
-                <h2 className="text-[0.95rem] m-0 whitespace-nowrap font-normal">
+                <h2 className="text-[0.95rem] m-0 whitespace-nowrap font-normal text-muted-foreground">
                   {discord_user.username}
                 </h2>
               )}
 
               {userStatus && !hideStatus && (
                 <p
-                  className={`text-[0.9rem] m-0 font-normal overflow-hidden whitespace-nowrap text-ellipsis ${
-                    theme === "dark" ? "text-[#aaa]" : "text-[#333]"
-                  }`}
+                  className={`text-[0.9rem] m-0 font-normal overflow-hidden whitespace-nowrap text-ellipsis text-muted-foreground`}
                 >
                   {userStatus.emoji?.id && images.statusEmoji && (
                     <img
@@ -514,9 +508,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                 key={`activity-${index}`}
                 className={`flex flex-row min-h-[80px] ml-1.5 text-xs pt-2 ${
                   index < displayActivities.length - 1
-                    ? `pb-2 border-b ${
-                        theme === "dark" ? "border-white/5" : "border-black/5"
-                      }`
+                    ? `pb-2 border-b text-foreground`
                     : "pb-0"
                 } overflow-hidden`}
               >
@@ -555,18 +547,14 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                   } leading-tight w-[calc(100%-85px)] overflow-hidden`}
                 >
                   <p
-                    className={`${
-                      theme === "dark" ? "text-white" : "text-black"
-                    } text-[0.85rem] font-bold overflow-hidden whitespace-nowrap text-ellipsis my-1.5`}
+                    className={`text-foreground text-[0.85rem] font-bold overflow-hidden whitespace-nowrap text-ellipsis my-1.5`}
                   >
                     {activity.name}
                   </p>
 
                   {activity.details && (
                     <p
-                      className={`${
-                        theme === "dark" ? "text-[#ccc]" : "text-[#777]"
-                      } overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}
+                      className={`text-muted-foreground overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}
                     >
                       {activity.details}
                     </p>
@@ -574,9 +562,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
 
                   {activity.state && (
                     <p
-                      className={`${
-                        theme === "dark" ? "text-[#ccc]" : "text-[#777]"
-                      } overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}
+                      className={`text-muted-foreground overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}
                     >
                       {activity.state}
                       {activity.party?.size
@@ -588,9 +574,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
 
                   {activity.timestamps?.start && !hideTimestamp && (
                     <p
-                      className={`${
-                        theme === "dark" ? "text-[#ccc]" : "text-[#777]"
-                      } overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}
+                      className={`text-muted-foreground overflow-hidden whitespace-nowrap text-[0.85rem] text-ellipsis my-1.5`}
                     >
                       {elapsedTime(activity.timestamps.start)} elapsed
                     </p>
@@ -623,7 +607,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                 )}
               </div>
 
-              <div className="text-[#999] -mt-0.5 leading-none w-[279px]">
+              <div className="text-muted-foreground-mt-0.5 leading-none w-[279px]">
                 <p
                   className={`text-xs font-bold ${
                     theme === "dark" ? "text-[#1CB853]" : "text-[#0d943d]"
@@ -655,9 +639,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
           hideActivity === "false" && (
             <div className="flex flex-row h-[150px] justify-center items-center">
               <p
-                className={`italic text-sm ${
-                  theme === "dark" ? "text-[#aaa]" : "text-[#444]"
-                } text-center`}
+                className={`italic text-sm text-muted-foreground text-center`}
               >
                 {idleMessage}
               </p>
