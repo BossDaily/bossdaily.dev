@@ -15,6 +15,7 @@ import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Badge } from "./ui/badge";
 import ShinyButton from "./magicui/shiny-button";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export const Projects: React.FC = () => {
   return (
@@ -84,9 +85,9 @@ export const Projects: React.FC = () => {
           }
         })}
       </motion.div>
-      <a title="View Projects" href="https://github.com/bossdaily">
+      <Link title="View Projects" href="https://github.com/bossdaily">
         <ShinyButton text="View All Projects" />
-      </a>
+      </Link>
     </div>
   );
 };

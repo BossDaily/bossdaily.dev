@@ -16,6 +16,7 @@ import { Badge } from "./ui/badge";
 import ShinyButton from "./magicui/shiny-button";
 import { motion } from "framer-motion";
 import { Spotlight } from "./ui/Spotlight";
+import Link from "next/link";
 
 export const AllProjects: React.FC = () => {
   return (
@@ -87,9 +88,9 @@ export const AllProjects: React.FC = () => {
           );
         })}
       </motion.div>
-      <a title="View Projects" href="https://github.com/bossdaily">
+      <Link title="View Projects" href="https://github.com/bossdaily">
         <ShinyButton text="View All Projects" />
-      </a>
+      </Link>
     </div>
   );
 };

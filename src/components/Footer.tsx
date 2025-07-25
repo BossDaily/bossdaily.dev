@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React from "react";
+import Link from "next/link";
 import { useLanyard } from "react-use-lanyard";
 
 const Footer: React.FC = () => {
@@ -33,24 +34,28 @@ const Footer: React.FC = () => {
           )}
           
           <div className="flex flex-col gap-4 px-2 py-4">
-            <a href="/" className="text-lg sm:text-xl text-foreground hover:text-primary hover:underline transition-colors">
+            <Link href="/" className="text-lg sm:text-xl text-foreground hover:text-primary hover:underline transition-colors">
               Home
-            </a>
-            <a href="/projects" className="text-lg sm:text-xl text-foreground hover:text-primary hover:underline transition-colors">
+            </Link>
+            <Link href="/projects" className="text-lg sm:text-xl text-foreground hover:text-primary hover:underline transition-colors">
               Projects
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://github.com/bossdaily"
+              target="_blank"
+              rel="noopener noreferrer"
               className="grow-0 shrink-0 text-xl text-left text-foreground hover:text-gray-300 hover:underline"
             >
               Github
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://wakatime.com/bossdaily"
+              target="_blank"
+              rel="noopener noreferrer"
               className="grow-0 shrink-0 text-xl text-left text-foreground hover:text-gray-300 hover:underline"
             >
               WakaTime
-            </a>
+            </Link>
           </div>
           <div className="flex flex-col justify-start items-start grow-0 shrink-0 relative overflow-hidden gap-2.5 p-2.5">
             <p className="grow-0 shrink-0 text-base text-left text-foreground">
