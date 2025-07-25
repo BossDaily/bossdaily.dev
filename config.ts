@@ -250,4 +250,25 @@ export const config = {
       ],
     },
   ],
+  footer: {
+    links: [
+      {
+        url: "/",
+        name: "Home"
+      },
+      {
+        url: "/projects", 
+        name: "Projects"
+      },
+      {
+        url: "https://github.com/bossdaily",
+        name: "Github"
+      },
+      {
+        url: "https://wakatime.com/bossdaily",
+        name: "WakaTime"
+      }
+    ],
+    copyright: "BossDaily"
+  }
 };

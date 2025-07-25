@@ -4,10 +4,16 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import Link from "next/link";
 import { useLanyard } from "react-use-lanyard";
+import { config } from "../../config";
+
+type FooterLink = {
+  url: string;
+  name: string;
+};
 
 const Footer: React.FC = () => {
   const { loading, status } = useLanyard({
-    userId: "274973338676494347",
+    userId: `${config.discordId}`,
     socket: true,
   });
 
@@ -34,32 +40,24 @@ const Footer: React.FC = () => {
           )}
           
           <div className="flex flex-col gap-4 px-2 py-4">
-            <Link href="/" className="text-lg sm:text-xl text-foreground hover:text-primary hover:underline transition-colors">
-              Home
-            </Link>
-            <Link href="/projects" className="text-lg sm:text-xl text-foreground hover:text-primary hover:underline transition-colors">
-              Projects
-            </Link>
-            <Link
-              href="https://github.com/bossdaily"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="grow-0 shrink-0 text-xl text-left text-foreground hover:text-gray-300 hover:underline"
-            >
-              Github
-            </Link>
-            <Link
-              href="https://wakatime.com/bossdaily"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="grow-0 shrink-0 text-xl text-left text-foreground hover:text-gray-300 hover:underline"
-            >
-              WakaTime
-            </Link>
+            {config.footer.links.map((link: FooterLink, index: number) => {
+              const isExternal = link.url.startsWith('http');
+              return (
+                <Link
+                  key={index}
+                  href={link.url}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  className="text-lg sm:text-xl text-foreground hover:text-primary hover:underline transition-colors"
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
           <div className="flex flex-col justify-start items-start grow-0 shrink-0 relative overflow-hidden gap-2.5 p-2.5">
             <p className="grow-0 shrink-0 text-base text-left text-foreground">
-              ©{new Date().getFullYear()} BossDaily
+              ©{new Date().getFullYear()} {config.footer.copyright}
             </p>
           </div>
         </div>
