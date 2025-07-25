@@ -53,13 +53,13 @@ export const Navbar = () => {
               <MenuIcon size={25} />
             </button>
 
-            <NavigationMenu className={`max-[650px]:absolute max-[650px]:top-full max-[650px]:left-0 max-[650px]:right-0 max-[650px]:mt-2 w-fit rounded-[20px] z-50 text-foreground bg-card/80 backdrop-blur-[6px] shadow-feature-card dark:shadow-feature-card-dark border-0 ring-0 ${menuOpen ? 'max-[650px]:block' : 'max-[650px]:hidden'} min-[651px]:hidden`} viewport={false}>
+            <NavigationMenu className={`max-[650px]:absolute max-[650px]:top-full max-[650px]:right-0 max-[650px]:mt-2 w-fit rounded-[20px] z-50 text-foreground bg-card/80 backdrop-blur-[6px] shadow-feature-card dark:shadow-feature-card-dark border-0 ring-0 ${menuOpen ? 'max-[650px]:block' : 'max-[650px]:hidden'} min-[651px]:hidden`} viewport={false}>
               <NavigationMenuList className="flex flex-col space-y-0 p-2">
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
                     <Link
                       href="/"
-                      className="flex items-center gap-3 h-full w-full px-3 py-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors min-w-[150px]"
+                      className="flex flex-row items-center gap-3 px-4 py-3 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors text-base whitespace-nowrap"
                       onClick={() => setMenuOpen(false)}
                     >
                       <Home size={16} /> Home
@@ -70,7 +70,7 @@ export const Navbar = () => {
                   <NavigationMenuLink asChild>
                     <Link
                       href="/#about"
-                      className="flex items-center gap-3 h-full w-full px-3 py-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors min-w-[150px]"
+                      className="flex flex-row items-center gap-3 px-4 py-3 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors text-base whitespace-nowrap"
                       onClick={() => setMenuOpen(false)}
                     >
                       <User size={16} /> About
@@ -81,19 +81,18 @@ export const Navbar = () => {
                   <NavigationMenuLink asChild>
                     <Link
                       href="/projects"
-                      className="flex items-center gap-3 h-full w-full px-3 py-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors min-w-[150px]"
+                      className="flex flex-row items-center gap-3 px-4 py-3 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors text-base whitespace-nowrap"
                       onClick={() => setMenuOpen(false)}
                     >
                       <Rocket size={16} /> Projects
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-                <div className="h-px bg-border my-1" />
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
                     <Link
                       href="/#contact"
-                      className="flex items-center gap-3 h-full w-full px-3 py-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors min-w-[150px]"
+                      className="flex flex-row items-center gap-3 px-4 py-3 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors text-base whitespace-nowrap"
                       onClick={() => setMenuOpen(false)}
                     >
                       <Phone size={16} /> Contact
