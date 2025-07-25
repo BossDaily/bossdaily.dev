@@ -1,13 +1,20 @@
 "use client";
 
-import { Menu, MenuItem, MenuDivider } from "@/components/hexta-ui/Menu";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 import { ModeToggle } from "@/components/mode-toggle";
 
 import { useState } from "react";
 import Image from "next/legacy/image";
 import Link from "next/link";
 
-import { FaHome, FaPhone, FaRocket, FaUser } from "react-icons/fa";
+import { Home, Phone, Rocket, User, Menu as MenuIcon } from "lucide-react";
 import { Avatar } from "./Avatar";
 
 import { useLanyard } from "react-use-lanyard";
@@ -43,97 +50,103 @@ export const Navbar = () => {
               name="menu"
               onClick={toggleMenu}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill="currentColor"
-                  fillRule="evenodd"
-                  d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75M2 8a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 8m6 4.25a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <MenuIcon size={25} />
             </button>
 
-            <Menu
-              className="max-[650px]:flex hidden w-fit rounded-[20px] z-50 text-foreground bg-card/80 backdrop-blur-[6px] shadow-feature-card dark:shadow-feature-card-dark border-0 ring-0"
-              onOpen={toggleMenu}
-              onClose={toggleMenu}
-              isOpen={menuOpen}
-            >
-              <MenuItem>
-                <Link
-                  href="/"
-
-                  className="flex items-center gap-3 h-full w-full"
-                >
-                  <FaHome /> Home
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link
-                  href="/#about"
-                  className="flex items-center gap-3 h-full w-full"
-                >
-                  <FaUser /> About
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link
-                  href="/projects"
-                  className="flex items-center gap-3 h-full w-full"
-                >
-                  <FaRocket /> Projects
-                </Link>
-              </MenuItem>
-              <MenuDivider />
-              <MenuItem>
-                <Link
-                  href="/#contact"
-                  className="flex items-center gap-3 h-full w-full"
-                >
-                  <FaPhone /> Contact
-                </Link>
-              </MenuItem>
-            </Menu>
+            <NavigationMenu className={`max-[650px]:absolute max-[650px]:top-full max-[650px]:left-0 max-[650px]:right-0 max-[650px]:mt-2 w-fit rounded-[20px] z-50 text-foreground bg-card/80 backdrop-blur-[6px] shadow-feature-card dark:shadow-feature-card-dark border-0 ring-0 ${menuOpen ? 'max-[650px]:block' : 'max-[650px]:hidden'} min-[651px]:hidden`} viewport={false}>
+              <NavigationMenuList className="flex flex-col space-y-0 p-2">
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/"
+                      className="flex items-center gap-3 h-full w-full px-3 py-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors min-w-[150px]"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <Home size={16} /> Home
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/#about"
+                      className="flex items-center gap-3 h-full w-full px-3 py-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors min-w-[150px]"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <User size={16} /> About
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/projects"
+                      className="flex items-center gap-3 h-full w-full px-3 py-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors min-w-[150px]"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <Rocket size={16} /> Projects
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <div className="h-px bg-border my-1" />
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/#contact"
+                      className="flex items-center gap-3 h-full w-full px-3 py-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors min-w-[150px]"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <Phone size={16} /> Contact
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
-          <ul className="flex items-center justify-center text-[14px] gap-7 max-[650px]:hidden">
-            <li>
-              <Link
-                href="/"
-                className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#about"
-                className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <a
-                href="/projects"
-                className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <Link
-                href="/#contact"
-                className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
+          <NavigationMenu className="max-[650px]:hidden">
+            <NavigationMenuList className="flex items-center justify-center text-[14px] gap-7">
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/"
+                    className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
+                  >
+                    Home
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/#about"
+                    className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
+                  >
+                    About
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/projects"
+                    className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
+                  >
+                    Projects
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/#contact"
+                    className="opacity-80 hover:opacity-100 hover:underline transition-all text-foreground"
+                  >
+                    Contact
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
       </nav>
     </>
