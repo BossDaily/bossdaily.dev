@@ -36,10 +36,10 @@ const ShinyButton = ({
     <motion.button
       {...animationProps}
       className={cn(
-        "relative rounded-lg px-6 py-2 font-medium backdrop-blur-xl transition-all duration-300 ease-in-out bg-background text-foreground shadow-feature-card dark:shadow-feature-card-dark hover:shadow-lg",
+        "relative rounded-lg px-6 py-2 font-medium backdrop-blur-xl transition-all duration-300 ease-in-out bg-background text-foreground shadow-feature-card dark:shadow-feature-card-dark hover:shadow-lg cursor-pointer",
         className,
       )}
-    >
+        >
       <span
         className="relative block h-full w-full text-sm uppercase tracking-wide text-muted-foreground font-medium"
       >
