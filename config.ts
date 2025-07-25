@@ -45,12 +45,31 @@ export const config = {
       ],
     },
     {
+      name: "Music Bridge",
+      url: "https://github.com/bossdaily/music-bridge",
+      featured: false,
+      btnName: "Repo",
+      thumbnail: "/project-music-bridge.png",
+      description: `Music Bridge is a full stack web app I am developing which syncs the playlists of all your music platforms.`,
+      tags: [
+        "TailwindCSS",
+        "HonoJS",
+        "Typescript",
+        "Node.js",
+        "AstroJS",
+        "TailwindCSS",
+        "PostgreSQL",
+        "Mono Repo",
+        "DrizzleORM",
+      ],
+    },
+    {
       name: "Waves.FM",
       url: "https://github.com/bossdaily/waves-fm",
       featured: true,
       btnName: "Repo",
       thumbnail: "/project-wavesfm.png",
-      description: `Waves FM is a web that creates real-time animated wave visualizations from the users current Last.fm music scrobble.`,
+      description: `Waves FM is a website that creates real-time animated wave visualizations from the users current Last.fm music scrobble.`,
       tags: [
         "React",
         "Typescript",
@@ -96,6 +115,22 @@ export const config = {
       ],
     },
     {
+      name: "Lecturn Tickets",
+      url: "https://github.com/comparatorcraftsmp/lecturn-tickets",
+      featured: false,
+      btnName: "Repo",
+      thumbnail: "/project-lecturn-tickets.png",
+      description: `Lecturn Tickets is a fork of a Discord bot that allowed me to create and manage support tickets within their server. I forked it to add HTML web transcriptions.`,
+      tags: [
+        "Discord.js",
+        "JavaScript",
+        "SFTP",
+        "MongoDB",
+        "HTML",
+        "CSS",
+      ],
+    },
+    {
       name: "Discord Link Embed",
       url: "https://discord-link-kappa.vercel.app/",
       featured: false,
@@ -104,6 +139,16 @@ export const config = {
       description: `This website allows you to dynamically create an embed on Discord only using a URL.`,
       tags: ["Next.JS", "Typescript", "TailwindCSS"],
     },
+    {
+      name: "ComparatorCraftSMP Landing Page",
+      url: "https://github.com/ComparatorCraftSMP/ComparatorCraftSMP.github.io",
+      featured: false,
+      btnName: "Repo",
+      thumbnail: "/project-ccsmp-landing.png",
+      description: `This is the landing page I created for ComparatorCraftSMP, a Minecraft server I use to own.`,
+      tags: ["HTML", "CSS", "JavaScript"],
+
+    }
   ],
   languages: [
     {
