@@ -250,6 +250,26 @@ export const config = {
       ],
     },
   ],
+  navbar: {
+    links: [
+      {
+        url: "/",
+        name: "Home"
+      },
+      {
+        url: "/#about",
+        name: "About"
+      },
+      {
+        url: "/projects",
+        name: "Projects"
+      },
+      {
+        url: "/#contact",
+        name: "Contact"
+      }
+    ]
+  },
   footer: {
     links: [
       {
