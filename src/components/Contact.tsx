@@ -11,6 +11,7 @@ import {
 import ShinyButton from "./magicui/shiny-button";
 import { motion } from "framer-motion";
 import { AuroraBackground } from "./ui/aurora-background";
+import { config } from "../../config";
 
 export const Contact: React.FC = () => {
   return (
@@ -44,7 +45,7 @@ export const Contact: React.FC = () => {
               Contact me to get started!
             </CardDescription>
             <div className="flex justify-end">
-              <a href="mailto:contact@bossdaily.dev" title="Contact Me">
+              <a href={`mailto:${config.email}`} title="Contact Me">
                 <ShinyButton text="Get in Touch" />
               </a>
             </div>

@@ -1,5 +1,6 @@
 export const config = {
   discordId: "274973338676494347",
+  email: "gboys2008@gmail.com",
   github: "bossdaily",
   hero_words: [
     "Web Developer",
@@ -7,6 +8,7 @@ export const config = {
     " Backend Developer",
     " Fullstack Developer",
   ],
+
   projects: [
     {
       name: "bossdaily.dev",
