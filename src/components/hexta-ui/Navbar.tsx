@@ -59,7 +59,7 @@ export const Navbar = () => {
             </button>
 
             <Menu
-              className="max-[650px]:flex hidden w-fit rounded-[20px] z-50 text-white"
+              className="max-[650px]:flex hidden w-fit rounded-[20px] z-50 text-foreground bg-card/80 backdrop-blur-[6px] shadow-feature-card dark:shadow-feature-card-dark border-0 ring-0"
               onOpen={toggleMenu}
               onClose={toggleMenu}
               isOpen={menuOpen}
