@@ -85,7 +85,7 @@ export const Projects: React.FC = () => {
         })}
       </motion.div>
       <a title="View Projects" href="https://github.com/bossdaily">
-        <ShinyButton text="View All Projects" className="dark" />
+        <ShinyButton text="View All Projects" />
       </a>
     </div>
   );
