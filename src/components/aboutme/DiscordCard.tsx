@@ -3,6 +3,7 @@
 import React from 'react';
 import LanyardCard from './Lancard';
 import { useLanyard } from 'react-use-lanyard';
+import UniqueLoading from '../ui/morph-loading';
 
 const DiscordCard: React.FC = () => {
   const { loading, status } = useLanyard({
@@ -13,7 +14,16 @@ const DiscordCard: React.FC = () => {
   return (
     <div className="w-full h-full flex justify-center items-center">
       {loading ? (
-        <div className="text-white text-sm animate-pulse">Loading Discord status...</div>
+        <div className="flex flex-col items-center space-y-4">
+          <UniqueLoading 
+            variant="morph" 
+            size="md" 
+            className="text-primary"
+          />
+          <div className="text-muted-foreground text-sm font-medium animate-pulse">
+            Loading Discord status...
+          </div>
+        </div>
       ) : (
         <LanyardCard
           data={status}
