@@ -61,7 +61,7 @@ export const Hero: React.FC = () => {
         }}
       >
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-center sm:text-left bg-clip-text text-transparent bg-linear-to-b from-gray-900 to-gray-600 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-50">
-          Hello, I am BossDaily <br />{" "}
+          Hello, I am {config.name} <br />{" "}
           <FlipWords
             words={config.hero_words}
             className="text-foreground text-2xl sm:text-3xl"
