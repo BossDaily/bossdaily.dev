@@ -138,7 +138,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ wakatimeData }) => {
         <div className="col-span-1 sm:col-span-3 sm:row-span-4 shadow-feature-card dark:shadow-feature-card-dark  bg-background group rounded-lg flex items-center justify-center overflow-hidden p-2">
           <div className="relative w-full h-full flex flex-col items-center justify-start gap-1">
             <p className=" hover:text-purple-600 text-foreground hover:underline">
-              Discord
+              Status
             </p>
             <DiscordCard />
           </div>

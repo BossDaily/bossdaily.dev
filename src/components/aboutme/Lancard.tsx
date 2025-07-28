@@ -4,6 +4,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { CSSProperties } from "react";
 import { LanyardData } from "react-use-lanyard";
+import { config } from "../../../config";
 
 // Define the Lanyard data types
 export namespace LanyardTypes {
@@ -379,9 +380,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
             className={`w-full flex flex-row pb-1.5 ${
               hideActivity !== "false" && !activity && !listening_to_spotify
                 ? ""
-                : `border-b ${
-                    theme === "dark" ? "border-white/10" : "border-black/10"
-                  }`
+                : `border-b-1 border-black/20 dark:border-white/10 text-foreground `
             }`}
           >
             <div className="flex relative h-20 w-20 shrink-0">
@@ -415,21 +414,9 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
             </div>
 
             <div className="h-20 w-[260px] flex flex-col justify-center p-2.5">
-              <div className="flex flex-row h-6">
+              <div className="flex flex-row h-6 ">
                 <h1 className="text-lg mr-3 whitespace-nowrap overflow-hidden text-ellipsis text-foreground">
-                  {showDisplayName && discord_user.global_name
-                    ? discord_user.global_name
-                    : discord_user.username}
-
-                  {!hideDiscrim &&
-                    !showDisplayName &&
-                    discord_user.discriminator !== "0" && (
-                      <span
-                        className="text-foreground"
-                      >
-                        #{discord_user.discriminator}
-                      </span>
-                    )}
+                  {config.name}
                 </h1>
                 {/* @ts-ignore */}
                 {!hideClan &&
@@ -467,7 +454,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
 
               {showDisplayName && (
                 <h2 className="text-[0.95rem] m-0 whitespace-nowrap font-normal text-muted-foreground">
-                  {discord_user.username}
+                  {config.name.toLowerCase().replace(" ", "")}
                 </h2>
               )}
 
@@ -508,7 +495,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                 key={`activity-${index}`}
                 className={`flex flex-row min-h-[80px] ml-1.5 text-xs pt-2 ${
                   index < displayActivities.length - 1
-                    ? `pb-2 border-b text-foreground`
+                    ? `pb-2 border-b-1 border-black/20 dark:border-white/10  text-foreground`
                     : "pb-0"
                 } overflow-hidden`}
               >
@@ -517,7 +504,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                     <img
                       src={images[`largeImage_${index}`]}
                       alt={`Activity ${index + 1} Large Image`}
-                      className="w-16 h-16 border border-[#222] rounded-[10px] object-cover"
+                      className="w-16 h-16 shadow-feature-card dark:shadow-feature-card-dark rounded-[10px] object-cover"
                     />
                   ) : (
                     <img
@@ -531,10 +518,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                     <img
                       src={images[`smallImage_${index}`]}
                       alt={`Activity ${index + 1} Small Image`}
-                      className="w-6 h-6 rounded-full absolute bottom-0 right-0"
-                      style={{
-                        border: `2px solid #${backgroundColor}`,
-                      }}
+                      className="w-6 h-6 rounded-full absolute bottom-0 right-0 shadow-feature-card dark:shadow-feature-card-dark" 
                     />
                   )}
                 </div>
@@ -596,7 +580,7 @@ const LanyardCard: React.FC<LanyardCardProps> = ({
                   <img
                     src={images.spotifyAlbum}
                     alt="Album Cover"
-                    className="w-16 h-16 border border-[#222] rounded-[10px] object-cover"
+                    className="w-16 h-16  rounded-[10px] object-cover"
                   />
                 ) : (
                   <img
