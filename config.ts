@@ -96,6 +96,7 @@ export const config = {
         "Rest-API",
         "Web Scraping",
         "Automation",
+        "MariaDB",
         "Appwrite",
       ],
     },
