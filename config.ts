@@ -86,7 +86,7 @@ export const config = {
       url: "https://gta6tracker.live/",
       featured: true,
       btnName: "Website",
-      thumbnail: "/project-gta6tracker.png",
+      thumbnail: "/project-gta6live.png",
       description: `GTA 6 Tracker is a website I built to track all news and leaks about GTA 6 in one place.`,
       tags: [
         "AstroJS",
@@ -104,7 +104,7 @@ export const config = {
       url: "https://github.com/bossdaily/letour-guide",
       featured: false,
       btnName: "Repo",
-      thumbnail: "/project-letour-guide.png",
+      thumbnail: "/project-letourguide.png",
       description: `LeTour Guide is a project I built to provide guided tours for various locations.`,
       tags: [
         "AstroJS",
